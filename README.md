@@ -31,6 +31,9 @@ The additional features we have decided to implement as a team are as follows:
 Tip: Click on screenshots to view them
 ### Kanban board 
 You can view screenshots of the Jira board below:
+![one](images/)
+![two](images/)
+![three](images/)
 ### CI Pipeline
 ### MoSCoW Analysis
 ![moscow-analysis](images/)
