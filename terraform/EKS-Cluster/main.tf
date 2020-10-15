@@ -35,7 +35,7 @@ resource "aws_iam_role_policy_attachment" "project-cluster-AmazonEKSVPCResourceC
 # Create Cluster 
 
 resource "aws_eks_cluster" "project-cluster" {
-  name     = "sfia2-project-cluster"
+  name     = "project-cluster"
   role_arn = aws_iam_role.project-cluster.arn
 
   vpc_config {
