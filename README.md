@@ -37,6 +37,12 @@ You can view screenshots of the Jira board below:
 ### CI Pipeline
 ### MoSCoW Analysis
 ![moscow-analysis](images/)
+
+<p align="center">
+  <img width="1400" height="550" src="https://i.imgur.com/d76jjgA.png">
+</p>
+
+
 ### Risk Assessment
 You can view the risk assessment for this project below:
 ![risks](images/)
