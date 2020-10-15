@@ -32,7 +32,6 @@ public class TicketDTO {
         this.completed = completed;
     }
 
-
     public long getId() {
         return id;
     }

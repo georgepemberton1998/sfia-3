@@ -1,7 +1,5 @@
 package com.qa.backend.dto;
 
-import com.qa.backend.domain.Ticket;
-
 public class SolutionsDTO {
     private long id;
     private String solutionDesc;
@@ -10,6 +8,7 @@ public class SolutionsDTO {
 
     }
     public SolutionsDTO(String solutionDesc) {
+        super();
         this.solutionDesc = solutionDesc;
     }
 
