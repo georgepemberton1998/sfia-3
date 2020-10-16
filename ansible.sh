@@ -2,8 +2,8 @@
 
 cd ~/sfia-3/ansible
 
-ansible-playbook -i {inv 1} {playbook1}
-ansible-playbook -i {inv 2} {playbook2}
-ansible-playbook -i {inv 3} {playbook3}
+ansible-playbook -i inventory1.ini user1.yaml
+ansible-playbook -i inventory2.ini install2.yaml
+ansible-playbook -i inventory3.ini install3.yaml
 
 echo "Successfully completed Ansible playbooks"
