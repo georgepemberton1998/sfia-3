@@ -1,0 +1,26 @@
+version: '3.7'
+services:
+  frontend:
+    image: maccpr7/[addImageNameHere]:latest
+    build: ./frontend
+    ports:
+    - target: 3000
+      published: 3000
+      protocol: tcp
+  backend:
+    image: maccpr7/backend-java:latest
+    build: ./backend
+    ports:
+    - target: 8082
+      published: 8082
+      protocol: tcp
+  nginx:
+    image: nginx:latest
+    ports:
+    - target: 80
+      published: 80
+      protocol: tcp
+    volumes:
+    - type: bind
+      source: ./nginx/nginx.conf
+      target: /etc/nginx/nginx.conf
