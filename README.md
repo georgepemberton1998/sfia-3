@@ -22,6 +22,14 @@ This is the repo for our final project at the QA Academy
 To create a Help Queue Spring Boot Application with full CRUD functionality, with 3 additional features from a list provided 
 
 ### Requirements
+- Create a user interface using React
+- Implement full CRUD functionality including 2/3 additional features from list provided.
+- Containerise application using Docker and Docker Compose.
+- Integrate a working CI Pipeline for automation using Jenkins 
+- Deploy application into testing and production environment
+- Use Terraform to create Infrastructure required 
+- Use Ansible to configure the environment
+- Deploy application into a Kubernetes cluster on AWS EKS for production.
 ### Our Approach
 The additional features we have decided to implement as a team are as follows:
 - Solutions - so users can add solutions to a ticket. All solutions will be stored in a separate database.  
