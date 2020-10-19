@@ -15,6 +15,7 @@ This is the repo for our final project at the QA Academy
    * [CI Pipeline](#ci-pipeline)
    * [MoSCoW Analysis](#moscow-analysis)
    * [Risk Assessment](#risk-assessment)
+   * [ERD](#ERD)
 * [Tools used](#tools-used)
 ## Overview
 ### Brief
@@ -42,8 +43,8 @@ You can view screenshots of the Jira board below:
 
 
 ### Risk Assessment
-You can view the risk assessment for this project below:
-![risks](images/)
+
+### ERD
 
 ## Tools used
 
