@@ -55,10 +55,10 @@ pipeline{
                 sh '''
                 docker-compose pull && docker-compose up -d
                 docker-compose ps
-                //testing would go here but haven't covered that yet
                 exit
                 >> EOF
                 '''
+                 //testing would go here but haven't covered that yet
             }
         }
         stage('Production') {
