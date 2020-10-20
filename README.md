@@ -39,17 +39,12 @@ The additional features we have decided to implement as a team are as follows:
 ## Documentation
 Tip: Click on screenshots to view them
 ### Kanban board 
-You can view screenshots of the Jira board below:
-![one](images/)
-![two](images/)
-![three](images/)
+
 ### CI Pipeline
 ### MoSCoW Analysis
 <p align="center">
   <img width="1400" height="550" src="https://i.imgur.com/d76jjgA.png">
 </p>
-
-
 ### Risk Assessment
 ![Risk Assessment](https://user-images.githubusercontent.com/67292767/96462884-03fa8280-121e-11eb-824d-22b1939d3d59.jpg)
 
@@ -59,7 +54,6 @@ You can view screenshots of the Jira board below:
 ## Tools used
 
 ## Authors/Contributors
-- Chinenye Nwandu
 - George Pemberton 
 - Keenan Bratley
 - Macaulay Farrell
