@@ -45,6 +45,7 @@ Tip: Click on screenshots to view them
 <p align="center">
   <img width="1400" height="550" src="https://i.imgur.com/d76jjgA.png">
 </p>
+
 ### Risk Assessment
 ![Risk Assessment](https://user-images.githubusercontent.com/67292767/96462884-03fa8280-121e-11eb-824d-22b1939d3d59.jpg)
 
@@ -54,6 +55,7 @@ Tip: Click on screenshots to view them
 ## Tools used
 
 ## Authors/Contributors
+- Chinenye Nwandu
 - George Pemberton 
 - Keenan Bratley
 - Macaulay Farrell
