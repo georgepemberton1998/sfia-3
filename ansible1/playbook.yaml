@@ -1,3 +1,8 @@
+- hosts: qa
+  become: yes
+  roles:
+  - userjenkins
+
 - hosts: jenkins
   become: yes
   roles:
