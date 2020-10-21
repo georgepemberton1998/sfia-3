@@ -3,8 +3,9 @@
   roles:
   - userjenkins
 
-- hosts: jenkins
+- hosts: jenkinsUser
   become: yes
   roles:
   - jenkins
   - docker
+
