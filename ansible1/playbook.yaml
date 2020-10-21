@@ -7,5 +7,5 @@
   become: yes
   roles:
   - jenkins
-  - docker
+ # - docker
 
