@@ -1,2 +1,2 @@
     - name: Install docker and docker-compose
-      script: docker.sh
+      script: roles/docker/tasks/docker.sh

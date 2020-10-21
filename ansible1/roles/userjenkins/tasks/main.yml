@@ -11,7 +11,7 @@
         home: /home/jenkins
 
     - name: 'Waiting for SSH access'
-      command: /bin/sleep 20
+      command: /bin/sleep 150
       async: 300
 
     #- name: Create .ssh folder
