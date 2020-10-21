@@ -5,69 +5,61 @@ pipeline{
         rollback = 'false'
     }
     stages {
-        stage('Test') {
+        stage('Set up') {
             steps {
+                //this may not be required, depends if we need a test vm
                 load "/home/jenkins/.envvars/env-vars.groovy"
                 sh '''
-                ssh ubuntu@xx.xxx.x.xxx << EOF
-                rm -rf sfia-3
+                ssh $USER@$VM << EOF
+                if [ -d "sfia-3" ]
+                then
+                rm -r sfia-3 --force
                 git clone https://github.com/georgepemberton1998/sfia-3.git
-                cd sfia-3
-                export SECRET_KEY="$SECRET_KEY"
-                export DB_PASSWORD="$DB_PASSWORD"
-                export DATABASE_URI="$DATABASE_URI"
-                export TEST_DATABASE_URI="$TEST_DATABASE_URI"
+                else
+                git clone https://github.com/georgepemberton1998/sfia-3.git
+                fi
                 >> EOF
                 '''
             }
         }
-        stage('Build Frontend Image') {
+        stage('Build images') {
             steps{
                 script {
                     if (env.rollback == 'false') {
-                        image = docker.build("maccpr7/frontend") && docker.build("maccpr7/backend-java")
+                        image = docker.build("maccpr7/frontend-react", "./frontend")
+                        image1 = docker.build("maccpr7/backend-java", "./backend")
                     }
                 }
             }
         }
-        stage('Build Backend Image') {
-            steps{
-                script {
-                    if (env.rollback == 'false') {
-                        image = docker.build("maccpr7/backend-java")
-                    }
-                }
-            }
-        }
-        stage ('Pull Image') {
+        stage ('Push images') {
             steps{
                 script {
                     if (env.rollback == 'false'){
                         docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'){ //need to set up a dockerhub credentials on jenkins
                             image.push("${env.app_version}")
+                            image1.push("${env.app_version}")
                         }
-                    }
+                    }                 
                 }
             }
         }
-        stage('Build App') {
+        stage('Deploy app') {
             steps { 
                 sh '''
-                docker-compose pull && docker-compose up -d
-                docker-compose ps
-                exit
+                ssh $USER@$VM << EOF
+                cd sfia-3
+                export app_version = $app_version
+                docker-compose up -d --build 
                 >> EOF
                 '''
-                 //testing would go here but haven't covered that yet
             }
         }
-        stage('Production') {
+        stage('Production deploy') {
             steps {
               //  load "/home/jenkins/.envvars/env-vars-prod.groovy"
                 sh '''
-                ssh ubuntu@xx.xxx.xxx.xx << EOF
-               
-                >> EOF
+                kubectl apply -f /kubernetes
                 '''
             }
 
