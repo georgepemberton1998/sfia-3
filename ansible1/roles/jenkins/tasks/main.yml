@@ -1,0 +1,38 @@
+    - name: 'Update APT package manager'
+      apt:
+        update_cache: yes
+
+    - name: 'Install OpenJDK Java'
+      apt:
+        name: "openjdk-8-jdk"
+        state: present
+
+    - name: 'Install aws cli'
+      shell: sudo apt update -y && sudo apt install curl unzip -y && curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip && sudo ./aws/install
+
+    - name: 'Install jenkins apt repository key'
+      apt_key: url=https://pkg.jenkins.io/debian-stable/jenkins.io.key state=present
+
+    - name: 'Ensure the repository is configured'
+      apt_repository: repo='deb https://pkg.jenkins.io/debian-stable binary/' state=present
+
+    - name: 'Install Jenkins'
+      apt: name=jenkins update_cache=yes
+
+    - name: 'Ensure jenkins is running'
+      service: name=jenkins state=started
+
+    - name: 'Waiting for initial admin password'
+      command: /bin/sleep 20
+      async: 45
+      # command: echo "waiting for password"
+      # poll: 5
+
+    - name: 'Get Admin password for Jenkins'
+      shell: cat /var/lib/jenkins/secrets/initialAdminPassword
+      changed_when: false
+      register: result
+
+    - name: 'Print Admin Jenkins password'
+      debug:
+        var: result.stdout

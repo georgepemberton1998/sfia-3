@@ -1,0 +1,23 @@
+    - name: Create jenkins user
+      user:
+        name: jenkins
+        password: '$6$pdz59f82$bdwkfEIKHSlb.Dm.l254RSn8p8bSXOr9MP0Id5SM1l.U5Od94hFGarPizhbNuQE6XQO8dKmaYy60B/Av7jpb11'
+        groups:
+          - sudo
+        state: present
+        shell: /bin/bash
+        system: no
+        createhome: yes
+        home: /home/jenkins
+
+    - name: Create .ssh folder
+      file: path=/home/jenkins/.ssh state=directory mode=0700 owner=jenkins
+
+    # - name: Add SSH key to authorized_keys
+    #   authorized_key: user=jenkins key="$pub_key qa@work"
+
+    # - name: Update authorized_keys rights
+    #   file: path=/home/jenkins/.ssh/authorized_keys state=file mode=0600 owner=jenkins
+
+    # - name: Tomcat can run any command with no password
+    #   lineinfile: "line='jenkins ALL=NOPASSWD: ALL' dest=/etc/sudoers regexp='^jenkins'"

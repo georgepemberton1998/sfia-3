@@ -1,0 +1,6 @@
+TO use 
+1. edit inventory.cfg with your IP 
+2. edit ansible_user being used to log onto vm if necessary
+3. run ansible-playbook -i inventory.cfg playbook.yaml 
+
+- This will install jenkins and run the docker script :) 
