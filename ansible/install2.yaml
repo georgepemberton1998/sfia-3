@@ -4,6 +4,11 @@
 
   tasks:
 
+    - name: Remove directory
+      file:
+        path: /delete_me
+        state: absent
+
     - name: 'Update APT package manager'
       apt:
         update_cache: yes
