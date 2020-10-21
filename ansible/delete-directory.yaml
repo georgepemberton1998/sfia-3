@@ -1,0 +1,7 @@
+---
+- hosts: all
+  become: true
+
+  tasks:
+    - name: Remove directory
+      shell: rm -r /var/lib/jenkins 
