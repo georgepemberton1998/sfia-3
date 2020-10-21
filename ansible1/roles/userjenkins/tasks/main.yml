@@ -1,4 +1,4 @@
-    - name: Create jenkins user
+    - name: 'Create jenkins user'
       user:
         name: jenkins
         password: '$6$pdz59f82$bdwkfEIKHSlb.Dm.l254RSn8p8bSXOr9MP0Id5SM1l.U5Od94hFGarPizhbNuQE6XQO8dKmaYy60B/Av7jpb11'
@@ -9,6 +9,10 @@
         system: no
         createhome: yes
         home: /home/jenkins
+
+    - name: 'Waiting for SSH access'
+      command: /bin/sleep 20
+      async: 300
 
     #- name: Create .ssh folder
     #  file: path=/home/jenkins/.ssh state=directory mode=0700 owner=jenkins
