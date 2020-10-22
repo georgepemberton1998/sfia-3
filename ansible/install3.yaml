@@ -1,5 +1,0 @@
-- name: Configure Test vm
-  hosts: testvm
-  tasks:
-    - name: Install docker and docker-compose
-      script: docker.sh

@@ -1,9 +1,0 @@
----
-- hosts: all
-  become: true
-
-  tasks:
-  - name: Copy directory to vm
-    copy:
-      src: /home/qa/jenkins
-      dest: /home/jenkins/var/lib/
