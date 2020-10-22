@@ -7,8 +7,4 @@ scp -r .jenkins jenkins@${ip}:
 
 ssh qa@${ip}
 
-#echo "sudo systemctl restart jenkins"
-
-#exit
-
 EOF
