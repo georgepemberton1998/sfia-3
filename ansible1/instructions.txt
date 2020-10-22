@@ -1,7 +1,8 @@
 NEW To Use:
-1. SSH into vm (get rid of host checking error)
-2. export 'ip=(new vm ip)'
-3. run ansible.sh script
-4. when prompted access new VM and create '.ssh' folder along with 'authorized_keys' file containing ansible host public key
-5. when script is finished enter 'sudo systemctl restart jenkins' in new VM in order to access jenkins job in browser
-6. log in with credentials.
+1. update IP address in inventory file
+2. SSH into vm (get rid of host checking error)
+3. export 'ip=(new vm ip)'
+4. run ansible.sh script
+5. when prompted access new VM and create '.ssh' folder along with 'authorized_keys' file containing ansible host public key
+6. when script is finished enter 'sudo systemctl restart jenkins' in new VM in order to access jenkins job in browser
+7. log in with credentials.
