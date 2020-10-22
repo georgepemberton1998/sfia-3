@@ -1,5 +1,2 @@
-    - name: Install docker and docker-compose
-      script: roles/docker/tasks/docker.sh
-      ignore_errors: True
-      async: 60
-      poll: 60
+  - name: 'Run docker script'
+    shell: chmod +x docker.sh && ./docker.sh
