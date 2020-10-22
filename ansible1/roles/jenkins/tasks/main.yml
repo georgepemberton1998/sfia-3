@@ -16,5 +16,5 @@
      become_user: jenkins
 
    - name: 'Waiting for ssh access'
-     command: /bin/sleep 90
-     async: 90
+     command: /bin/sleep 50
+     async: 50
