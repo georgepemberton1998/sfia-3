@@ -40,13 +40,24 @@
   #  - name: 'Remove Jenkins directory'
   #    shell: rm -r /var/lib/jenkins
 
-    - name: 'Copy directory to vm'
-      copy:
-        src: /home/qa/jenkins.zip
-        dest: /var/lib/
+  - name: 'Run jenkins script'
+    shell: chmod +x Install.sh && ./Install.sh
 
-    - name: 'Unzip jenkins folder'
-      unarchive:
-        src: /var/lib/jenkins.zip
-        dest: /var/lib/
-        remote_src: yes
+  - name: 'Remove .jenkins'
+    shell: rm -r -f ~/.jenkins
+    become_user: jenkins
+
+  - name: 'Waiting for ssh access'
+    command: /bin/sleep 90
+    async: 90
+
+
+
+#    - name: 'Copy directory to vm'
+#      shell: scp -r
+#
+#    - name: 'Unzip jenkins folder'
+#      unarchive:
+#        src: /var/lib/jenkins.zip
+#        dest: /var/lib/
+#        remote_src: yes

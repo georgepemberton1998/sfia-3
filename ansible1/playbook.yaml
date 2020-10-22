@@ -1,11 +1,6 @@
 - hosts: qa
   become: yes
   roles:
-  - userjenkins
-
-- hosts: jenkinsUser
-  become: yes
-  roles:
   - jenkins
  # - docker
 
