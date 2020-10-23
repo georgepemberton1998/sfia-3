@@ -3,7 +3,8 @@
        update_cache: yes
 
    - name: 'Install aws cli'
-     shell: sudo apt update -y && sudo apt install curl unzip -y && curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip && sudo ./aws/install
+     shell: apt update -y && apt install curl unzip -y && curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip && sudo ./aws/install
+     become: true
 
    - name: 'Run jenkins script'
      shell: chmod +x Install.sh && ./Install.sh
