@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import Ticket from './Ticket';
 
 const ViewTickets = () => {
     const [tickets, setTickets] = useState([]);
@@ -19,20 +20,12 @@ const ViewTickets = () => {
         );
     }, []);
     return (
-        <div>
+        <div className="main">
         {console.log(tickets)}
         {tickets.map((ticket) => (
-          <li key={ticket.id}>
-            Title: {ticket.title}<br/>
-            Topic: {ticket.topic}<br/>
-            Author: {ticket.author} <br/>
-            Description: {ticket.description}<br/>
-            Urgency: {ticket.urgency}<br/>
 
-           <a href={updateUrl + ticket.id}>Update Ticket</a><br/>
-           <a href={deleteUrl + ticket.id}>Delete Ticket</a>
-           
-          </li>
+          <Ticket key={ticket.id} title={ticket.title} topic={ticket.topic} description={ticket.description} urgency={ticket.urgency} author={ticket.author} updateURL={updateUrl + ticket.id} deleteURL={deleteUrl + ticket.id}/>
+
         ))}
     
         </div>
