@@ -66,4 +66,9 @@ a {
   padding: 5px;
   background-color: red;
 }
+.logo {
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
 
