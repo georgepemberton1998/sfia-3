@@ -18,7 +18,7 @@ const DeleteTicket = () => {
       }, [id]);
     return (
 
-        <p>Delete ticket id: {id}</p>
+        <p>Deleted ticket id: {id}</p>
 
     );
 }

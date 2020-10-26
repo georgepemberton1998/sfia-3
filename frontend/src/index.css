@@ -3,11 +3,66 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+nav {
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+}
+nav a {
+  background-color: blue;
+  text-decoration: none;
+  color: black;
+  padding: 1em;
+}
+main {
+  display: flex;
+  justify-content: space-around;
+}
+.form {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+input, select {
+  display: block;
+  width: 25em;
+
+}
+input, select {
+  box-sizing: border-box;
+  padding: 5px;
+  border-radius: 3px;
+}
+input[type=submit] {
+  background-color: #45a049;
+  margin-top: 10px;
+}
+p {
+  margin: 0.2em;
+}
+.ticket {
+  padding: 1em;
+  background-color: grey;
+  border-radius: 1em;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.buttons-update {
+  padding: 5px;
+  background-color: green;
+}
+.buttons-delete {
+  padding: 5px;
+  background-color: red;
+}
+

@@ -21,21 +21,23 @@ const ViewTickets = () => {
     }, []);
     return (
       <>
-        <div className="incompleteTickets">
-          <h3>Incomplete Tickets</h3>
-          {tickets.filter(ticket => ticket.completed === 0).map((ticket) => (
-             <Ticket key={ticket.id} title={ticket.title} topic={ticket.topic} description={ticket.description} urgency={ticket.urgency} author={ticket.author} updateURL={updateUrl + ticket.id} deleteURL={deleteUrl + ticket.id}/>
+        <main>
+            <div className="incompleteTickets">
+                <h3>Incomplete Tickets</h3>
+                {tickets.filter(ticket => ticket.completed === 0).map((ticket) => (
+                  <Ticket key={ticket.id} title={ticket.title} topic={ticket.topic} description={ticket.description} urgency={ticket.urgency} author={ticket.author} updateURL={updateUrl + ticket.id} deleteURL={deleteUrl + ticket.id}/>
 
-           ))}
-        </div>
+                ))}
+            </div>
 
-        <div className="completeTickets">
-          <h3>Complete Tickets</h3>
-          {tickets.filter(ticket => ticket.completed === 1).map((ticket) => (
-            <Ticket key={ticket.id} title={ticket.title} topic={ticket.topic} description={ticket.description} urgency={ticket.urgency} author={ticket.author} updateURL={updateUrl + ticket.id} deleteURL={deleteUrl + ticket.id}/>
+              <div className="completeTickets">
+                <h3>Complete Tickets</h3>
+                {tickets.filter(ticket => ticket.completed === 1).map((ticket) => (
+                  <Ticket key={ticket.id} title={ticket.title} topic={ticket.topic} description={ticket.description} urgency={ticket.urgency} author={ticket.author} updateURL={updateUrl + ticket.id} deleteURL={deleteUrl + ticket.id}/>
 
-          ))}
-        </div>
+                ))}
+              </div>
+        </main>
 
       </>
     );
