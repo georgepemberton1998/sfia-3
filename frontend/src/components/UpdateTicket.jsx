@@ -50,6 +50,7 @@ const UpdateTicket = () => {
             console.log(error);
 
         });
+        alert("Ticket Updated");
     }
     }
 

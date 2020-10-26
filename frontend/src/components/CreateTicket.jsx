@@ -29,6 +29,8 @@ const CreateTicket = () => {
             console.log(error);
 
         });
+        alert("Ticket created");
+        
     }
     }
 
