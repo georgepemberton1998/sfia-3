@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@CrossOrigin
 public class TicketController {
     private final TicketService ticketService;
     @Autowired
@@ -18,30 +19,26 @@ public class TicketController {
         this.ticketService = ticketService;
     }
 
-    @CrossOrigin(origins = "*")
     @GetMapping("/ticket/getTickets")
     public ResponseEntity<List<TicketDTO>> getTickets(){
         return ResponseEntity.ok(this.ticketService.getTickets());
     }
 
-    @CrossOrigin(origins = "*")
     @PostMapping("/ticket/createTicket")
     public ResponseEntity<TicketDTO> createTicket(@RequestBody Ticket ticket){
         return new ResponseEntity<TicketDTO>(this.ticketService.createTicket(ticket), HttpStatus.CREATED);
     }
-    @CrossOrigin(origins = "*")
+
     @PutMapping("/ticket/updateTicket/{id}")
     public ResponseEntity<TicketDTO> updateTicket(@PathVariable Long id, @RequestBody Ticket ticket){
         return ResponseEntity.ok(this.ticketService.updateTicket(id, ticket));
     }
 
-    @CrossOrigin(origins = "*")
     @DeleteMapping("/ticket/deleteTicket/{id}")
     public Boolean deleteTicket(@PathVariable Long id){
         return this.ticketService.deleteTicket(id);
     }
 
-    @CrossOrigin(origins = "*")
     @GetMapping("/ticket/getTicketById/{id}")
     public ResponseEntity<TicketDTO> getTicketById(@PathVariable Long id){
         return ResponseEntity.ok(this.ticketService.findTicketById(id));
