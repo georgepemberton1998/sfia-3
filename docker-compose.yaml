@@ -1,12 +1,14 @@
 version: '3.7'
 services:
   frontend:
-    image: maccpr7/[addImageNameHere]:latest
+    image: maccpr7/frontend-react:latest
     build: ./frontend
     ports:
     - target: 3000
       published: 3000
       protocol: tcp
+    stdin_open: true
+    tty: true
   backend:
     image: maccpr7/backend-java:latest
     build: ./backend
@@ -20,6 +22,8 @@ services:
     - target: 80
       published: 80
       protocol: tcp
+    stdin_open: true
+    tty: true
     volumes:
     - type: bind
       source: ./nginx/nginx.conf
