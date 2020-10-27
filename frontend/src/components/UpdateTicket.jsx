@@ -50,7 +50,6 @@ const UpdateTicket = () => {
             console.log(error);
 
         });
-        window.location.replace("/");
         alert("Ticket Updated");
 
     }

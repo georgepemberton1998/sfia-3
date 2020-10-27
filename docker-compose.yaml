@@ -9,6 +9,8 @@ services:
       protocol: tcp
     stdin_open: true
     tty: true
+    depends_on:
+      - backend
   backend:
     image: maccpr7/backend-java:latest
     build: ./backend
@@ -28,3 +30,6 @@ services:
     - type: bind
       source: ./nginx/nginx.conf
       target: /etc/nginx/nginx.conf
+    depends_on: 
+      - frontend
+      - backend

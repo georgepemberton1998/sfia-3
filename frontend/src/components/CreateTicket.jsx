@@ -29,7 +29,6 @@ const CreateTicket = () => {
             console.log(error);
 
         });
-        window.location.replace("/");
         alert("Ticket created");
         
         
