@@ -85,15 +85,15 @@ public class TicketIntegrationTest {
 		this.mockMVC.perform(delete("/ticket/deleteTicket/1")).andExpect(status().isOk());
 	}
 
-	@Test
-	void getTicket() throws Exception{
-		Ticket ticket  = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", 0);
-		ticket.setId(1L);
-		List<Ticket> tickets = new ArrayList<>();
-		tickets.add(ticket);
-		String responseBody = this.mapper.writeValueAsString(tickets);
-
-		this.mockMVC.perform(get("/ticket/getTickets")).andExpect(status().isOk()).andExpect(content().json(responseBody));
-        assertThat(ticket).isEqualToIgnoringGivenFields(ticket, "created").hasNoNullFieldsOrProperties();
-	}
+//	@Test
+//	void getTicket() throws Exception{
+//		Ticket ticket  = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", 0);
+//		ticket.setId(1L);
+//		List<Ticket> tickets = new ArrayList<>();
+//		tickets.add(ticket);
+//		String responseBody = this.mapper.writeValueAsString(tickets);
+//
+//		this.mockMVC.perform(get("/ticket/getTickets")).andExpect(status().isOk()).andExpect(content().json(responseBody));
+//        assertThat(ticket).isEqualToIgnoringGivenFields(ticket, "created").hasNoNullFieldsOrProperties();
+//	}
 }
