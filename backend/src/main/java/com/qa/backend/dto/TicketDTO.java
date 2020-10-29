@@ -2,6 +2,7 @@ package com.qa.backend.dto;
 
 import com.qa.backend.domain.Solutions;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,7 @@ public class TicketDTO {
     private String title;
     private String author;
     private String description;
-    private Timestamp time_created;
+    private LocalDateTime created = LocalDateTime.now();
     private String urgency;
     private String topic;
     private long completed;
@@ -21,12 +22,11 @@ public class TicketDTO {
 
     }
 
-    public TicketDTO(String title, String author, String description, Timestamp time_created, String urgency, String topic, long completed) {
+    public TicketDTO(String title, String author, String description, String urgency, String topic, long completed) {
         super();
         this.title = title;
         this.author = author;
         this.description = description;
-        this.time_created = time_created;
         this.urgency = urgency;
         this.topic = topic;
         this.completed = completed;
@@ -64,12 +64,12 @@ public class TicketDTO {
         this.description = description;
     }
 
-    public Timestamp getTime_created() {
-        return time_created;
+    public LocalDateTime getCreated() {
+        return created;
     }
 
-    public void setTime_created(Timestamp time_created) {
-        this.time_created = time_created;
+    public void setCreated(LocalDateTime created) {
+        this.created = created;
     }
 
     public String getUrgency() {
@@ -103,6 +103,4 @@ public class TicketDTO {
     public void setSolution(List<Solutions> solution) {
         this.solution = solution;
     }
-
-
 }
