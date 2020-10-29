@@ -48,7 +48,7 @@ const CreateTicket = () => {
                     <input type="text" name="author" value={author} onChange={e => setAuthor(e.target.value)}/>
 
                     <label>Description of issue:</label>
-                    <input type="text" name="description" value={description} onChange={e => setDescription(e.target.value)}/>
+                    <input type="text" name="description" maxlength="50" value={description} onChange={e => setDescription(e.target.value)}/>
 
                     <label>Topic:</label>
                     <select name="topic" value={topic} onChange={e => setTopic(e.target.value)}>
