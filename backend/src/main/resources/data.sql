@@ -1,4 +1,4 @@
-INSERT INTO `Ticket`
+INSERT INTO `ticket`
 (`title`,
 `author`,
 `description`,
@@ -6,9 +6,9 @@ INSERT INTO `Ticket`
 `topic`,
 `completed`)
 VALUES
-('nginx issue',
-'Macaulay Farrell',
-'Help meh pls',
+('nginx',
+'keenan',
+'help meh',
 'very urgent',
 'SoftwareDev',
 0);
