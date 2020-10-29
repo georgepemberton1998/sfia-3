@@ -7,7 +7,7 @@ const CreateTicket = () => {
     let [description, setDescription] = useState('');
     let [topic, setTopic] = useState('');
     let [urgency, setUrgency] = useState('');
-    const completed = 0;
+    const completed = false;
     const ticketCreate = () => {
         if(title === "" || author === "" || description === "" || topic === "" || urgency === "") {
             alert("Please complete the ticket request before submitting");
@@ -42,10 +42,10 @@ const CreateTicket = () => {
                 <form onSubmit={ticketCreate}>
 
                     <label>Title:</label>
-                    <input type="text" name="title" value={title} onChange={e => setTitle(e.target.value)}/>
+                    <input type="text" name="title" maxlength="40" value={title} onChange={e => setTitle(e.target.value)}/>
 
                     <label>Author:</label>
-                    <input type="text" name="author" value={author} onChange={e => setAuthor(e.target.value)}/>
+                    <input type="text" name="author" maxlength="40" value={author} onChange={e => setAuthor(e.target.value)}/>
 
                     <label>Description of issue:</label>
                     <input type="text" name="description" maxlength="50" value={description} onChange={e => setDescription(e.target.value)}/>

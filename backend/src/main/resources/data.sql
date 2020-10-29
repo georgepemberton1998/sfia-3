@@ -11,7 +11,7 @@ VALUES
 'help meh',
 'very urgent',
 'SoftwareDev',
-0);
+false);
 
 INSERT INTO `solutions`
 (`solution_desc`)

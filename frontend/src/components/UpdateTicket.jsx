@@ -9,7 +9,7 @@ const UpdateTicket = () => {
     let [description, setDescription] = useState('');
     let [topic, setTopic] = useState('');
     let [urgency, setUrgency] = useState('');
-    let [completed, setCompleted] = useState(0);
+    let [completed, setCompleted] = useState(false);
     useEffect(() => {
         
         const url = "http://localhost:8082/ticket/getTicketById/" + id;
@@ -63,13 +63,13 @@ const UpdateTicket = () => {
                     
 
                     <label>Title:</label>
-                    <input type="text" name="title" value={title} onChange={e => setTitle(e.target.value)}/>
+                    <input type="text" name="title" maxlength="40" value={title} onChange={e => setTitle(e.target.value)}/>
 
                     <label>Author:</label>
-                    <input type="text" name="author" value={author} onChange={e => setAuthor(e.target.value)}/>
+                    <input type="text" name="author" maxlength="40" value={author} onChange={e => setAuthor(e.target.value)}/>
 
                     <label>Description of issue:</label>
-                    <input type="text" name="description" value={description} onChange={e => setDescription(e.target.value)}/>
+                    <input type="text" name="description" maxlength="50" value={description} onChange={e => setDescription(e.target.value)}/>
 
                     <label>Topic:</label>
                     <select name="topic" value={topic} onChange={e => setTopic(e.target.value)}>
@@ -89,8 +89,8 @@ const UpdateTicket = () => {
                     <label>Status</label>
 
                     <select name="completed" value={completed} onChange={e => setCompleted(e.target.value)}>
-                        <option value="0">Incomplete</option>
-                        <option value="1">Complete</option>
+                        <option value="false">Incomplete</option>
+                        <option value="true">Complete</option>
                         </select>
 
 

@@ -14,13 +14,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.ResultMatcher;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
@@ -46,14 +41,14 @@ public class TicketIntegrationTest {
     void createTicket() throws Exception {
 
 
-        Ticket newTicket = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", 0);
+        Ticket newTicket = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", false);
 
         String testTicketAsJSON = this.mapper.writeValueAsString(newTicket);
         RequestBuilder request = post("/ticket/createTicket").contentType(MediaType.APPLICATION_JSON).content(testTicketAsJSON);
 
         ResultMatcher checkStatus = status().is(201);
 
-        Ticket savedTicket = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", 0);
+        Ticket savedTicket = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", false);
         savedTicket.setId(2L);
 
         MvcResult result = this.mockMVC.perform(request).andExpect(checkStatus).andReturn();
@@ -65,13 +60,13 @@ public class TicketIntegrationTest {
 
     @Test
     void updateTicket() throws Exception {
-        Ticket newTicket = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", 0);
+        Ticket newTicket = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", false);
         String testTicketAsJSON = this.mapper.writeValueAsString(newTicket);
         RequestBuilder request = put("/ticket/updateTicket/1").contentType(MediaType.APPLICATION_JSON).content(testTicketAsJSON);
 
         ResultMatcher checkStatus = status().is(202);
 
-        Ticket savedTicket = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", 0);
+        Ticket savedTicket = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", false);
         savedTicket.setId(1L);
 
         MvcResult result = this.mockMVC.perform(request).andExpect(checkStatus).andReturn();

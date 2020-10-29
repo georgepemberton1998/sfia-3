@@ -20,14 +20,13 @@ public class Ticket {
     @Column
     private String description;
     @Column(updatable = false)
-
     private LocalDateTime created = LocalDateTime.now();
     @Column
     private String urgency;
     @Column
     private String topic;
     @Column
-    private long completed;
+    private Boolean completed;
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "ticket"})
     @OneToMany(mappedBy = "ticket", fetch = FetchType.EAGER)
     private List<Solutions> solution = new ArrayList<>();
@@ -36,20 +35,19 @@ public class Ticket {
 
     }
    
-    public Ticket(String title, String author, String description, String urgency, String topic, long completed) {
+    public Ticket(String title, String author, String description, String urgency, String topic, Boolean completed) {
         this.title = title;
         this.author = author;
         this.description = description;
-//        this.time_created = time_created;
         this.urgency = urgency;
         this.topic = topic;
         this.completed = completed;
     }
-    public long getCompleted() {
+
+    public Boolean getCompleted() {
         return completed;
     }
-
-    public void setCompleted(long completed) {
+    public void setCompleted(Boolean completed) {
         this.completed = completed;
     }
 

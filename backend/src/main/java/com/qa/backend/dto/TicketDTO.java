@@ -1,7 +1,6 @@
 package com.qa.backend.dto;
 
 import com.qa.backend.domain.Solutions;
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,14 +14,14 @@ public class TicketDTO {
     private LocalDateTime created = LocalDateTime.now();
     private String urgency;
     private String topic;
-    private long completed;
+    private Boolean completed;
     private List<Solutions> solution = new ArrayList<>();
 
     public TicketDTO() {
 
     }
 
-    public TicketDTO(String title, String author, String description, String urgency, String topic, long completed) {
+    public TicketDTO(String title, String author, String description, String urgency, String topic, Boolean completed) {
         super();
         this.title = title;
         this.author = author;
@@ -88,19 +87,19 @@ public class TicketDTO {
         this.topic = topic;
     }
 
-    public long getCompleted() {
-        return completed;
-    }
-
-    public void setCompleted(long completed) {
-        this.completed = completed;
-    }
-
     public List<Solutions> getSolution() {
         return solution;
     }
 
     public void setSolution(List<Solutions> solution) {
         this.solution = solution;
+    }
+
+    public Boolean getCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(Boolean completed) {
+        this.completed = completed;
     }
 }
