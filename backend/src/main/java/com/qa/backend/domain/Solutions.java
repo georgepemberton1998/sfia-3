@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 public class Solutions {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column
     private String solutionDesc;

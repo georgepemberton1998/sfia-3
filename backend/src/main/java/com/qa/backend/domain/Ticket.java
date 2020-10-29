@@ -4,13 +4,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Ticket {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column
     private String title;
@@ -19,8 +20,8 @@ public class Ticket {
     @Column
     private String description;
     @Column(updatable = false)
-    @CreationTimestamp
-    private Timestamp time_created;
+
+    private LocalDateTime created = LocalDateTime.now();
     @Column
     private String urgency;
     @Column
@@ -34,12 +35,12 @@ public class Ticket {
     public Ticket() {
 
     }
-
-    public Ticket(String title, String author, String description, Timestamp time_created, String urgency, String topic, long completed) {
+   
+    public Ticket(String title, String author, String description, String urgency, String topic, long completed) {
         this.title = title;
         this.author = author;
         this.description = description;
-        this.time_created = time_created;
+//        this.time_created = time_created;
         this.urgency = urgency;
         this.topic = topic;
         this.completed = completed;
@@ -84,12 +85,12 @@ public class Ticket {
         this.description = description;
     }
 
-    public Timestamp getTime_created() {
-        return time_created;
+    public LocalDateTime getCreated() {
+        return created;
     }
 
-    public void setTime_created(Timestamp time_created) {
-        this.time_created = time_created;
+    public void setCreated(LocalDateTime created) {
+        this.created = created;
     }
 
     public String getUrgency() {
