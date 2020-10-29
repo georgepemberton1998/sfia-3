@@ -31,7 +31,7 @@ public class SolutionsController {
 
     @PutMapping("/solutions/updateSolution/{id}")
     public ResponseEntity<SolutionsDTO> updateSolution(@PathVariable Long id, @RequestBody Solutions solutions){
-        return ResponseEntity.ok(this.solutionsService.updateSolution(id, solutions));
+        return new ResponseEntity<SolutionsDTO>(this.solutionsService.updateSolution(id, solutions), HttpStatus.ACCEPTED);
     }
 
     @DeleteMapping("/solutions/deleteSolution/{id}")
