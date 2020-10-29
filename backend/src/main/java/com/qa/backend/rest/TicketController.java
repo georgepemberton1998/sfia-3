@@ -31,7 +31,7 @@ public class TicketController {
 
     @PutMapping("/ticket/updateTicket/{id}")
     public ResponseEntity<TicketDTO> updateTicket(@PathVariable Long id, @RequestBody Ticket ticket){
-        return ResponseEntity.ok(this.ticketService.updateTicket(id, ticket));
+        return new ResponseEntity<TicketDTO>(this.ticketService.updateTicket(id, ticket), HttpStatus.ACCEPTED);
     }
 
     @DeleteMapping("/ticket/deleteTicket/{id}")
