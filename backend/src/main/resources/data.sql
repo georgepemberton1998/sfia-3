@@ -12,3 +12,8 @@ VALUES
 'very urgent',
 'SoftwareDev',
 0);
+
+INSERT INTO `solutions`
+(`solution_desc`)
+VALUES
+('nginx');
