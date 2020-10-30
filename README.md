@@ -79,7 +79,7 @@ what configuration does it do?
 Anything else</span> 
 
 ### Ansible
-Ansibles key role is to automating the deployment of this application. We have used it to install and configure several dependencies which would otherwise have to be completed manually. The installs take place on the instances created using terraform. Currently, there are 4 installs we have automated this way;  
+Ansibles key role is to increase automation of the deployment of this application. We have used it to install and configure several dependencies which would otherwise have to be done manually. The installs take place on the instances created using terraform. Currently, there are 3 installs we have automated this way;  
 **1. Jenkins**,  
 On the Jenkins Host, following an SCP of a script to create a jenkins user and install it. After this, another SCP takes place which holds the desired jenkins configuration (Users, Plugins, Jobs & UI)  
 **2. AWS CLI**,   
