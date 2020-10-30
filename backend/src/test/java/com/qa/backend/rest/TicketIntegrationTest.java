@@ -3,6 +3,7 @@ package com.qa.backend.rest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.backend.domain.Ticket;
+import com.qa.backend.dto.TicketDTO;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -14,8 +15,13 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.ResultMatcher;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
@@ -80,15 +86,16 @@ public class TicketIntegrationTest {
 		this.mockMVC.perform(delete("/ticket/deleteTicket/1")).andExpect(status().isOk());
 	}
 
-//	@Test
-//	void getTicket() throws Exception{
-//		Ticket ticket  = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", 0);
-//		ticket.setId(1L);
+	@Test
+	void getTicketById() throws Exception{
+		TicketDTO ticket  = new TicketDTO("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", false);
+        ticket.setId(1L);
+
 //		List<Ticket> tickets = new ArrayList<>();
 //		tickets.add(ticket);
-//		String responseBody = this.mapper.writeValueAsString(tickets);
-//
-//		this.mockMVC.perform(get("/ticket/getTickets")).andExpect(status().isOk()).andExpect(content().json(responseBody));
-//        assertThat(ticket).isEqualToIgnoringGivenFields(ticket, "created").hasNoNullFieldsOrProperties();
-//	}
+		String responseBody = this.mapper.writeValueAsString(ticket);
+
+		this.mockMVC.perform(get("/ticket/getTicketById/1")).andExpect(status().isOk()).andExpect(content().json(responseBody));
+        assertThat(ticket).isEqualToIgnoringGivenFields(ticket, "created").hasNoNullFieldsOrProperties();
+	}
 }
