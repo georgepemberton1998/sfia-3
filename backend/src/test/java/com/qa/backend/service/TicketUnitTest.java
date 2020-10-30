@@ -5,6 +5,7 @@ import com.qa.backend.domain.Ticket;
 import com.qa.backend.dto.TicketDTO;
 import com.qa.backend.rest.TicketController;
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
@@ -56,7 +57,7 @@ public class TicketUnitTest {
     }
 
 
-    @org.junit.Test
+    @Test
     public void getAllTicketsTest() {
         when(ticketService.getTickets())
                 .thenReturn(this.ticketList.stream().map(this::mapToDTO).collect(Collectors.toList()));
@@ -64,20 +65,20 @@ public class TicketUnitTest {
         verify(ticketService, times(1)).getTickets();
     }
 
-    @org.junit.Test
+    @Test
     public void createTicketTest() {
         when(this.ticketService.createTicket(testTicket)).thenReturn(this.ticketDTO);
         assertEquals(new ResponseEntity<TicketDTO>(this.ticketDTO, HttpStatus.CREATED), this.ticketController.createTicket(testTicket));
         verify(this.ticketService, times(1)).createTicket(this.testTicket);
     }
 
-    @org.junit.Test
+    @Test
     public void deleteTicketTest() {
         this.ticketController.deleteTicket(id);
         verify(this.ticketService, times(1)).deleteTicket(id);
     }
 
-    @org.junit.Test
+    @Test
     public void findTicketByIDTest() {
         when(this.ticketService.findTicketById(this.id))
                 .thenReturn(this.ticketDTO);
@@ -88,7 +89,7 @@ public class TicketUnitTest {
         verify(this.ticketService, times(1)).findTicketById(this.id);
     }
 
-    @org.junit.Test
+    @Test
     public void updateTicketTest() {
         Ticket newTicket = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", false);
         Ticket updateTicket = new Ticket(newTicket.getTitle(), newTicket.getAuthor(), newTicket.getDescription(), newTicket.getUrgency(), newTicket.getTopic(), newTicket.getCompleted());

@@ -64,7 +64,7 @@ public class SolutionsUnitTest {
         verify(solutionsService, times(1)).getSolutions();
     }
 
-    @org.junit.Test
+    @Test
     public void createSolutionsTest() {
         when(this.solutionsService.createSolution(testSolutions)).thenReturn(this.solutionsDTO);
         assertEquals(new ResponseEntity<SolutionsDTO>(this.solutionsDTO, HttpStatus.CREATED), this.solutionsController.createSolution(testSolutions));

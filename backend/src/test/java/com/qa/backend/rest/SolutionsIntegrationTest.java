@@ -60,27 +60,23 @@ public class SolutionsIntegrationTest {
 //        Solutions solutionResult = this.mapper.readValue(reqBody, Solutions.class);
     }
 
-//    @Test
-//    void updateSolution() throws Exception {
-//        Solutions newSolution = new Solutions("nginx");
-//		String testSolutionJSON = this.mapper.writeValueAsString(newSolution);
-//		RequestBuilder request = put("/solutions/updateSolution/1").contentType(MediaType.APPLICATION_JSON).content(testSolutionJSON);
-//
-//		ResultMatcher checkStatus = status().is(202);
-//
-//		Ticket newTicket = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", 0);
-//        String testTicketAsJSON = this.mapper.writeValueAsString(newTicket);
-//
-//		Solutions savedSolution = new Solutions("nginx");
-////		Ticket newTicket = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", 0);
-//		savedSolution.setTicket(newTicket); // id = 1 because we're updating the value inserted using data.sql
-//        savedSolution.setId(1L);
-//
-//		String expectedAsJSON = this.mapper.writeValueAsString(savedSolution);
-//		ResultMatcher checkJSON = content().json(expectedAsJSON);
-//
-//		this.mockMVC.perform(request).andExpect(checkStatus).andExpect(checkJSON);
-//	}
+    @Test
+    void updateSolutions() throws Exception {
+        Solutions newSolutions = new Solutions("nginx");
+        String testSolutionsAsJSON = this.mapper.writeValueAsString(newSolutions);
+        RequestBuilder request = put("/solutions/updateSolution/1").contentType(MediaType.APPLICATION_JSON).content(testSolutionsAsJSON);
+
+        ResultMatcher checkStatus = status().is(202);
+
+        Solutions savedSolutions = new Solutions("nginx");
+        savedSolutions.setId(1L);
+
+
+        MvcResult result = this.mockMVC.perform(request).andExpect(checkStatus).andReturn();
+        String reqBody = result.getResponse().getContentAsString();
+        Solutions solutionsResult = this.mapper.readValue(reqBody, Solutions.class);
+        assertThat(solutionsResult).isEqualToIgnoringGivenFields(savedSolutions, "created").hasNoNullFieldsOrProperties();
+    }
 
     @Test
 	public void deleteSolution() throws Exception{
