@@ -6,18 +6,20 @@ This is the repo for our final project at the QA Academy
 ## Resources
 * Presentation: [Click here](https://docs.google.com/presentation/d/1UD4ODFqCkFFhUio51SS_RvHzOjG7B9JMoznZREt4MMU/edit?usp=sharing)
 ## Contents 
-* [Overview](#overview)
+- [Overview](#overview)
    * [Brief](#brief)
    * [Requirements](#requirements)
    * [Our Approach](#our-approach)
-* [Documentation](#documentation)
+- [Documentation](#documentation)
    * [Kanban board](#kanban-board)
    * [CI Pipeline](#ci-pipeline)
    * [MoSCoW Analysis](#moscow-analysis)
    * [Risk Assessment](#risk-assessment)
    * [ERD](#ERD)
-* [Tools used](#tools-used)
-* [Licensing](#Licensing)
+- [Tools used](#tools-used)
+- [Licensing](#Licensing)
+
+
 ## Overview
 ### Brief
 To create a Help Queue Spring Boot Application with full CRUD functionality, with 3 additional features from a list provided 
@@ -54,6 +56,80 @@ Tip: Click on screenshots to view them
 ![ERD Diagram](https://user-images.githubusercontent.com/67292767/96587972-f3f4a880-12da-11eb-8ddd-4458962648f6.jpg)
 
 ## Tools used
+* [Dev-Ops](#dev-ops)
+   + [Terraform](#terraform)
+   + [Ansible](#ansible)
+   + [Jenkins](#jenkins)
+   + [Kubernetes](#kubernetes)
+   + [AWS](#aws)
+* [Application](#application)
+   + [Frontend](#frontend)
+   + [Backend](#backend)
+   + [Testing](#testing)
+
+### Dev-Ops
+<span style="color:red">image of pipeline</span> 
+<p>
+  <img width="150" height="200" src="https://i.imgur.com/pydg9bI.jpg">
+</p>
+
+### Terraform
+<span style="color:red">What does terraform set up?  
+what configuration does it do?  
+Anything else</span> 
+
+### Ansible
+Ansibles kill role is to automating the deployment of this application. We have used it to install and configure several dependencies which would otherwise have to be completed manually. The installs take place on the instances created using terraform. Currently, there are 4 installs we have automated this way;  
+**1. Jenkins**,  
+On the Jenkins Host, following an SCP of a script to create a jenkins user and install it. After this, another SCP takes place which holds the desired jenkins configuration (Users, Plugins, Jobs & UI)  
+**2. AWS CLI**,   
+On the jenkins host, which is used to deploy the application on the Kuberenetes cluster  
+**3. Docker & Docker-Compose**,  
+On the Jenkins host, which is used to push the most recent images to dockerhub
+On the test EC2, which is used to pull and test the most recent images from dockerhub  
+
+
+### Jenkins
+<span style="color:red">What does the job do?  
+What did we do with the UI?  
+Anything else</span>
+
+
+### Kubernetes
+<span style="color:red">What does it do? (deploy the app)  
+How does it work?  
+What does the environment look like?  
+Anything else</span>
+
+### AWS
+<span style="color:red">Networking  
+Anything else</span>
+
+### Application
+<span style="color:red">image of frontend</span> 
+<p>
+  <img width="150" height="200" src="https://i.imgur.com/pydg9bI.jpg">
+</p>
+
+
+### Frontend
+
+<span style="color:red">What we did to hit the MVP  
+What we did to surpass the MVP   
+CSS, react</span>
+
+### Backend
+<span style="color:red">What we did to hit the MVP   
+What we did to surpass the MVP  
+Springboot</span>
+
+#### Testing
+<span style="color:red">Spring testing - describe  
+Coverage - line method & other  
+React testing - describe  
+Coverage - line method & other
+</span> 
+
 ## Licensing
 MIT License
 
