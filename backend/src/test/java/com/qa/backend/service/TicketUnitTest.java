@@ -1,6 +1,5 @@
 package com.qa.backend.service;
 
-
 import com.qa.backend.domain.Ticket;
 import com.qa.backend.dto.TicketDTO;
 import com.qa.backend.rest.TicketController;
@@ -20,7 +19,6 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.times;
-
 
 @RunWith(MockitoJUnitRunner.class)
 public class TicketUnitTest {
@@ -55,7 +53,6 @@ public class TicketUnitTest {
         this.testTicketWithID.setId(id);
         this.ticketDTO = this.mapToDTO(testTicketWithID);
     }
-
 
     @Test
     public void getAllTicketsTest() {
@@ -98,7 +95,4 @@ public class TicketUnitTest {
         assertEquals(new ResponseEntity<TicketDTO>(this.mapToDTO(updateTicket), HttpStatus.ACCEPTED), this.ticketController.updateTicket(this.id, newTicket));
         verify(this.ticketService, times(1)).updateTicket(this.id, newTicket);
     }
-
-
-
 }

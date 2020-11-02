@@ -40,7 +40,6 @@ public class SolutionsIntegrationTest {
     @Autowired
     private ObjectMapper mapper;
 
-
     @Test
     void createSolution() throws Exception {
 
@@ -56,8 +55,6 @@ public class SolutionsIntegrationTest {
 
         MvcResult result = this.mockMVC.perform(request).andExpect(checkStatus).andReturn();
 
-//        String reqBody = result.getResponse().getContentAsString();
-//        Solutions solutionResult = this.mapper.readValue(reqBody, Solutions.class);
     }
 
     @Test
@@ -70,7 +67,6 @@ public class SolutionsIntegrationTest {
 
         Solutions savedSolutions = new Solutions("nginx");
         savedSolutions.setId(1L);
-
 
         MvcResult result = this.mockMVC.perform(request).andExpect(checkStatus).andReturn();
         String reqBody = result.getResponse().getContentAsString();

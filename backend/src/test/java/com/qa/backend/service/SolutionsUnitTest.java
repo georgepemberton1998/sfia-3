@@ -20,7 +20,6 @@ import static org.junit.Assert.assertFalse;
 import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.times;
 
-
 @RunWith(MockitoJUnitRunner.class)
 public class SolutionsUnitTest {
     @InjectMocks
@@ -54,7 +53,6 @@ public class SolutionsUnitTest {
         this.testSolutionsWithID.setId(id);
         this.solutionsDTO = this.mapToDTO(testSolutionsWithID);
     }
-
 
     @Test
     public void getAllSolutionsTest() {
@@ -97,7 +95,4 @@ public class SolutionsUnitTest {
         assertEquals(new ResponseEntity<SolutionsDTO>(this.mapToDTO(updateSolutions), HttpStatus.ACCEPTED), this.solutionsController.updateSolution(this.id, newSolutions));
         verify(this.solutionsService, times(1)).updateSolution(this.id, newSolutions);
     }
-
-
-
 }

@@ -1,6 +1,5 @@
 package com.qa.backend.rest;
 
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.qa.backend.domain.Ticket;
 import com.qa.backend.dto.TicketDTO;
@@ -40,8 +39,6 @@ public class TicketIntegrationTest {
 
     @Autowired
     private ObjectMapper mapper;
-
-
 
     @Test
     void createTicket() throws Exception {
