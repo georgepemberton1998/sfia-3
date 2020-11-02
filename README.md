@@ -16,6 +16,7 @@ This is the repo for our final project at the QA Academy
    * [MoSCoW Analysis](#moscow-analysis)
    * [Risk Assessment](#risk-assessment)
    * [ERD](#ERD)
+   * [Wireframes](#wireframes)
 - [Tools used](#tools-used)
 - [Licensing](#Licensing)
 
@@ -54,6 +55,8 @@ Tip: Click on screenshots to view them
 
 ### ERD
 ![ERD Diagram](https://user-images.githubusercontent.com/67292767/96587972-f3f4a880-12da-11eb-8ddd-4458962648f6.jpg)
+
+### Wireframes
 
 ## Tools used
 * [Dev-Ops](#dev-ops)
@@ -154,7 +157,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ## Authors/Contributors
-- Chinenye Nwandu
+- Chinenye Nwandu 
 - George Pemberton 
 - Keenan Bratley
 - Macaulay Farrell
