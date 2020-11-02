@@ -50,7 +50,8 @@ The additional features we have decided to implement as a team are as follows:
 </p>
 
 ### Risk Assessment
-![Risk Assessment](https://i.imgur.com/PStW4pQ.png)
+![Risk Assessment](https://i.imgur.com/sRvLLgp.png)
+![Risk Assessment_Graph](https://i.imgur.com/cnuukuB.png)
 
 ### ERD
 ![ERD Diagram](https://user-images.githubusercontent.com/67292767/96587972-f3f4a880-12da-11eb-8ddd-4458962648f6.jpg)
