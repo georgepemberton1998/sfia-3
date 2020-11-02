@@ -41,7 +41,6 @@ The additional features we have decided to implement as a team are as follows:
 - Topics - so topics can be assigned to tickets, based upon a field stored in a topic field in the ticket table. 
 
 ## Documentation
-Tip: Click on screenshots to view them
 ### Kanban board 
 
 ### CI Pipeline
