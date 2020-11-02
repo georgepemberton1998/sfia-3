@@ -134,6 +134,8 @@ Coverage - line method & other
 React testing - describe  
 Coverage - line method & other
 </span> 
+![Average Testing coverage](https://i.imgur.com/QDs9JjF.png)
+![Individual package testing](https://i.imgur.com/WUvCN4U.png)
 
 ## Licensing
 MIT License
