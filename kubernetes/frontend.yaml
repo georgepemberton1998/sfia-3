@@ -18,7 +18,9 @@ spec:
       - name: frontend
         image: maccpr7/frontend-react:latest
         ports:
-        - containerPort: 3000    
+        - containerPort: 3000   
+        stdin: true
+        tty: true 
        
 ---
 apiVersion: v1
