@@ -19,6 +19,9 @@ spec:
         image: maccpr7/frontend-react:latest
         ports:
         - containerPort: 3000
+      restartPolicy: Always
+      
+      
 ---
 apiVersion: v1
 kind: Service

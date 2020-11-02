@@ -6,16 +6,10 @@ data:
   default.conf: |
     server {
         listen 80;
-	location / {
-            proxy_pass http://frontend:3000;
+        location / {
+          proxy_pass http://frontend:300;
         }
-
-        location /api {
-            proxy_pass http://backend:8082/;
-        }
-
         location http://localhost:8082/ {
-            proxy_pass http://backend:8082/;
+          proxy_pass http://backend:8082/;
         }
-
     }
