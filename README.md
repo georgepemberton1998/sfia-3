@@ -159,7 +159,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ## Authors/Contributors
-- Chinenye Nwandu 
+- Chinenye Nwandu* 
 - George Pemberton 
 - Keenan Bratley
 - Macaulay Farrell
