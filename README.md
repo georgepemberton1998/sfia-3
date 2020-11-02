@@ -57,7 +57,7 @@ The additional features we have decided to implement as a team are as follows:
 
 ### Wireframes
 ![View Tickets](https://i.imgur.com/1pAGrZn.png)
-![Create Ticket](https://i.imgur.com/utIqwYq.png)
+![Create Ticket](https://i.imgur.com/CgZDYwQ.png)
 ![Update Ticket](https://i.imgur.com/K7poGRQ.png)
 
 ## Tools used
