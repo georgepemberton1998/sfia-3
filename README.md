@@ -44,6 +44,8 @@ The additional features we have decided to implement as a team are as follows:
 ### Kanban board 
 
 ### CI Pipeline
+![CI Pipeline](https://i.imgur.com/DWyH8aO.png)
+
 ### MoSCoW Analysis
 ![MoSCoW diagram](https://i.imgur.com/tajqyXm.png)
 
