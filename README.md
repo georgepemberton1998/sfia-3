@@ -56,6 +56,9 @@ The additional features we have decided to implement as a team are as follows:
 ![ERD Diagram](https://user-images.githubusercontent.com/67292767/96587972-f3f4a880-12da-11eb-8ddd-4458962648f6.jpg)
 
 ### Wireframes
+![View Tickets](https://i.imgur.com/1pAGrZn.png)
+![Create Ticket](https://i.imgur.com/utIqwYq.png)
+![Update Ticket](https://i.imgur.com/K7poGRQ.png)
 
 ## Tools used
 * [Dev-Ops](#dev-ops)
