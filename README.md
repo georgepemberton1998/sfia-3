@@ -133,7 +133,8 @@ Springboot</span>
 Coverage - line method & other  
 React testing - describe  
 Coverage - line method & other
-</span> 
+</span>
+
 <br/>
 Average testing coverage:<br/>
 ![Average Testing coverage](https://i.imgur.com/QDs9JjF.png) <br/>
