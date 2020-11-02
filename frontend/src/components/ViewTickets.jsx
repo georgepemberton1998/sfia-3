@@ -25,7 +25,7 @@ const ViewTickets = () => {
             <div className="incompleteTickets">
                 <h3>Incomplete Tickets</h3>
                 {tickets.filter(ticket => ticket.completed === false).map((ticket) => (
-                  <Ticket key={ticket.id} title={ticket.title} topic={ticket.topic} description={ticket.description} urgency={ticket.urgency} author={ticket.author} updateURL={updateUrl + ticket.id} deleteURL={deleteUrl + ticket.id}/>
+                  <Ticket key={ticket.id} title={ticket.title} topic={ticket.topic} description={ticket.description} urgency={ticket.urgency} author={ticket.author} solutionDesc={ticket.solutionDesc} updateURL={updateUrl + ticket.id} deleteURL={deleteUrl + ticket.id}/>
 
                 ))}
             </div>
@@ -33,7 +33,7 @@ const ViewTickets = () => {
               <div className="completeTickets">
                 <h3>Complete Tickets</h3>
                 {tickets.filter(ticket => ticket.completed === true).map((ticket) => (
-                  <Ticket key={ticket.id} title={ticket.title} topic={ticket.topic} description={ticket.description} urgency={ticket.urgency} author={ticket.author} updateURL={updateUrl + ticket.id} deleteURL={deleteUrl + ticket.id}/>
+                  <Ticket key={ticket.id} title={ticket.title} topic={ticket.topic} description={ticket.description} urgency={ticket.urgency} author={ticket.author} solutionDesc={ticket.solutionDesc} updateURL={updateUrl + ticket.id} deleteURL={deleteUrl + ticket.id}/>
 
                 ))}
               </div>

@@ -44,6 +44,7 @@ public class TicketService {
         update.setTitle(ticket.getTitle());
         update.setTopic(ticket.getTopic());
         update.setUrgency(ticket.getUrgency());
+        update.setSolutionDesc(ticket.getSolutionDesc());
         return this.mapToDTO(this.ticketRepository.save(update));
     }
 

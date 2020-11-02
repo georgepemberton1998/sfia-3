@@ -8,6 +8,7 @@ const CreateTicket = () => {
     let [topic, setTopic] = useState('');
     let [urgency, setUrgency] = useState('');
     const completed = false;
+    const solutionDesc = "";
     const ticketCreate = () => {
         if(title === "" || author === "" || description === "" || topic === "" || urgency === "") {
             alert("Please complete the ticket request before submitting");
@@ -19,7 +20,8 @@ const CreateTicket = () => {
             description: description,
             urgency: urgency,
             topic: topic,
-            completed: completed
+            completed: completed,
+            solutionDesc: solutionDesc
         })
         .then(function (response) {
             console.log(response);

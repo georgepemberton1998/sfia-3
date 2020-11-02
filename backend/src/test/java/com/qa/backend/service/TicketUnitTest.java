@@ -47,9 +47,9 @@ public class TicketUnitTest {
     @Before
     public void setUp(){
         this.ticketList = new ArrayList<>();
-        this.testTicket = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", false);
+        this.testTicket = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", false, "change port");
         ticketList.add(testTicket);
-        this.testTicketWithID = new Ticket(testTicket.getTitle(), testTicket.getAuthor(), testTicket.getDescription(), testTicket.getUrgency(), testTicket.getTopic(), testTicket.getCompleted());
+        this.testTicketWithID = new Ticket(testTicket.getTitle(), testTicket.getAuthor(), testTicket.getDescription(), testTicket.getUrgency(), testTicket.getTopic(), testTicket.getCompleted(), testTicket.getSolutionDesc());
         this.testTicketWithID.setId(id);
         this.ticketDTO = this.mapToDTO(testTicketWithID);
     }

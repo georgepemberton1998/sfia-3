@@ -27,6 +27,8 @@ public class Ticket {
     private String topic;
     @Column
     private Boolean completed;
+    @Column
+    private String solutionDesc;
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "ticket"})
     @OneToMany(mappedBy = "ticket", fetch = FetchType.EAGER)
     private List<Solutions> solution = new ArrayList<>();
@@ -35,13 +37,14 @@ public class Ticket {
 
     }
    
-    public Ticket(String title, String author, String description, String urgency, String topic, Boolean completed) {
+    public Ticket(String title, String author, String description, String urgency, String topic, Boolean completed, String solutionDesc) {
         this.title = title;
         this.author = author;
         this.description = description;
         this.urgency = urgency;
         this.topic = topic;
         this.completed = completed;
+        this.solutionDesc = solutionDesc;
     }
 
     public Boolean getCompleted() {
@@ -113,6 +116,13 @@ public class Ticket {
 
     public void setSolution(List<Solutions> solution) {
         this.solution = solution;
+    }
+    public String getSolutionDesc() {
+        return solutionDesc;
+    }
+
+    public void setSolutionDesc(String solutionDesc) {
+        this.solutionDesc = solutionDesc;
     }
 
 }

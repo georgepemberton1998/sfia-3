@@ -4,14 +4,17 @@ INSERT INTO `ticket`
 `description`,
 `urgency`,
 `topic`,
-`completed`)
+`completed`,
+`solution_desc`
+)
 VALUES
 ('nginx',
 'keenan',
 'help meh',
 'very urgent',
 'SoftwareDev',
-false);
+false,
+'change port');
 
 INSERT INTO `solutions`
 (`solution_desc`)

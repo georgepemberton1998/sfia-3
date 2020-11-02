@@ -15,13 +15,14 @@ public class TicketDTO {
     private String urgency;
     private String topic;
     private Boolean completed;
+    private String solutionDesc;
     private List<Solutions> solution = new ArrayList<>();
 
     public TicketDTO() {
 
     }
 
-    public TicketDTO(String title, String author, String description, String urgency, String topic, Boolean completed) {
+    public TicketDTO(String title, String author, String description, String urgency, String topic, Boolean completed, String solutionDesc) {
         super();
         this.title = title;
         this.author = author;
@@ -29,6 +30,7 @@ public class TicketDTO {
         this.urgency = urgency;
         this.topic = topic;
         this.completed = completed;
+        this.solutionDesc = solutionDesc;
     }
 
     public long getId() {
@@ -102,4 +104,12 @@ public class TicketDTO {
     public void setCompleted(Boolean completed) {
         this.completed = completed;
     }
+    public String getSolutionDesc() {
+        return solutionDesc;
+    }
+
+    public void setSolutionDesc(String solutionDesc) {
+        this.solutionDesc = solutionDesc;
+    }
+
 }

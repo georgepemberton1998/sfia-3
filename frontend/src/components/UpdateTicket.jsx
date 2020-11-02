@@ -10,6 +10,7 @@ const UpdateTicket = () => {
     let [topic, setTopic] = useState('');
     let [urgency, setUrgency] = useState('');
     let [completed, setCompleted] = useState(false);
+    let [solutionDesc, setSolutionDesc] = useState('');
     useEffect(() => {
         
         const url = "http://localhost:8082/ticket/getTicketById/" + id;
@@ -22,6 +23,7 @@ const UpdateTicket = () => {
           setUrgency(res.data.urgency);
           setTopic(res.data.topic);
           setCompleted(res.data.completed);
+          setSolutionDesc(res.data.solutionDesc);
         }) 
     
       }, [id]);
@@ -40,7 +42,8 @@ const UpdateTicket = () => {
             description: description,
             urgency: urgency,
             topic: topic,
-            completed: completed
+            completed: completed,
+            solutionDesc: solutionDesc
         })
         .then(function (response) {
             console.log(response);
@@ -86,12 +89,16 @@ const UpdateTicket = () => {
                         <option value="Urgent">Urgent</option>
                         <option value="Not Urgent">Not Urgent</option>
                     </select>
+
+                    <label>Solution</label>
+                    <input type="text" name="solutionDesc" maxlength="50" value={solutionDesc} onChange={e => setSolutionDesc(e.target.value)}/>
+
                     <label>Status</label>
 
                     <select name="completed" value={completed} onChange={e => setCompleted(e.target.value)}>
                         <option value="false">Incomplete</option>
                         <option value="true">Complete</option>
-                        </select>
+                    </select>
 
 
                     <input type="submit" value="Update Ticket"/>

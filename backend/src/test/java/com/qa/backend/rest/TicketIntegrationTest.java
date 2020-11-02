@@ -44,14 +44,14 @@ public class TicketIntegrationTest {
     void createTicket() throws Exception {
 
 
-        Ticket newTicket = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", false);
+        Ticket newTicket = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", false, "change port");
 
         String testTicketAsJSON = this.mapper.writeValueAsString(newTicket);
         RequestBuilder request = post("/ticket/createTicket").contentType(MediaType.APPLICATION_JSON).content(testTicketAsJSON);
 
         ResultMatcher checkStatus = status().is(201);
 
-        Ticket savedTicket = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", false);
+        Ticket savedTicket = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", false, "change port");
         savedTicket.setId(2L);
 
         MvcResult result = this.mockMVC.perform(request).andExpect(checkStatus).andReturn();
@@ -63,13 +63,13 @@ public class TicketIntegrationTest {
 
     @Test
     void updateTicket() throws Exception {
-        Ticket newTicket = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", false);
+        Ticket newTicket = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", false, "change port");
         String testTicketAsJSON = this.mapper.writeValueAsString(newTicket);
         RequestBuilder request = put("/ticket/updateTicket/1").contentType(MediaType.APPLICATION_JSON).content(testTicketAsJSON);
 
         ResultMatcher checkStatus = status().is(202);
 
-        Ticket savedTicket = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", false);
+        Ticket savedTicket = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", false, "change port");
         savedTicket.setId(1L);
 
         MvcResult result = this.mockMVC.perform(request).andExpect(checkStatus).andReturn();
