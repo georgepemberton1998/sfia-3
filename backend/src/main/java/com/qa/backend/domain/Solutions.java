@@ -42,5 +42,8 @@ public class Solutions {
         this.ticket = ticket;
     }
 
-
+    @Override
+    public String toString(){
+        return "Solution Description:" + solutionDesc;
+    }
 }
