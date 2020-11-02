@@ -45,9 +45,7 @@ The additional features we have decided to implement as a team are as follows:
 
 ### CI Pipeline
 ### MoSCoW Analysis
-<p align="center">
-  <img width="1400" height="550" src="https://i.imgur.com/d76jjgA.png">
-</p>
+![MoSCoW diagram](https://i.imgur.com/tajqyXm.png)
 
 ### Risk Assessment
 ![Risk Assessment](https://i.imgur.com/FWQCumY.png)
