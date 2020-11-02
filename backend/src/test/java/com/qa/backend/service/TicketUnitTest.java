@@ -86,13 +86,13 @@ public class TicketUnitTest {
         verify(this.ticketService, times(1)).findTicketById(this.id);
     }
 
-    @Test
-    public void updateTicketTest() {
-        Ticket newTicket = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", false);
-        Ticket updateTicket = new Ticket(newTicket.getTitle(), newTicket.getAuthor(), newTicket.getDescription(), newTicket.getUrgency(), newTicket.getTopic(), newTicket.getCompleted());
-        updateTicket.setId(this.id);
-        when(this.ticketService.updateTicket(this.id, newTicket)).thenReturn(this.mapToDTO(updateTicket));
-        assertEquals(new ResponseEntity<TicketDTO>(this.mapToDTO(updateTicket), HttpStatus.ACCEPTED), this.ticketController.updateTicket(this.id, newTicket));
-        verify(this.ticketService, times(1)).updateTicket(this.id, newTicket);
-    }
+//    @Test
+//    public void updateTicketTest() {
+//        Ticket newTicket = new Ticket("nginx", "keenan", "help meh", "very urgent", "SoftwareDev", false);
+//        Ticket updateTicket = new Ticket(newTicket.getTitle(), newTicket.getAuthor(), newTicket.getDescription(), newTicket.getUrgency(), newTicket.getTopic(), newTicket.getCompleted());
+//        updateTicket.setId(this.id);
+//        when(this.ticketService.updateTicket(this.id, newTicket)).thenReturn(this.mapToDTO(updateTicket));
+//        assertEquals(new ResponseEntity<TicketDTO>(this.mapToDTO(updateTicket), HttpStatus.ACCEPTED), this.ticketController.updateTicket(this.id, newTicket));
+//        verify(this.ticketService, times(1)).updateTicket(this.id, newTicket);
+//    }
 }

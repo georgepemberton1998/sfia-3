@@ -86,13 +86,13 @@ public class SolutionsUnitTest {
         verify(this.solutionsService, times(1)).findSolutionById(this.id);
     }
 
-    @Test
-    public void updateSolutionsTest() {
-        Solutions newSolutions = new Solutions("nginx");
-        Solutions updateSolutions = new Solutions(newSolutions.getSolutionDesc());
-        updateSolutions.setId(this.id);
-        when(this.solutionsService.updateSolution(this.id, newSolutions)).thenReturn(this.mapToDTO(updateSolutions));
-        assertEquals(new ResponseEntity<SolutionsDTO>(this.mapToDTO(updateSolutions), HttpStatus.ACCEPTED), this.solutionsController.updateSolution(this.id, newSolutions));
-        verify(this.solutionsService, times(1)).updateSolution(this.id, newSolutions);
-    }
+//    @Test
+//    public void updateSolutionsTest() {
+//        Solutions newSolutions = new Solutions("nginx");
+//        Solutions updateSolutions = new Solutions(newSolutions.getSolutionDesc());
+//        updateSolutions.setId(this.id);
+//        when(this.solutionsService.updateSolution(this.id, newSolutions)).thenReturn(this.mapToDTO(updateSolutions));
+//        assertEquals(new ResponseEntity<SolutionsDTO>(this.mapToDTO(updateSolutions), HttpStatus.ACCEPTED), this.solutionsController.updateSolution(this.id, newSolutions));
+//        verify(this.solutionsService, times(1)).updateSolution(this.id, newSolutions);
+//    }
 }
