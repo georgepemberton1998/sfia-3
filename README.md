@@ -50,7 +50,7 @@ Tip: Click on screenshots to view them
 </p>
 
 ### Risk Assessment
-![Risk Assessment](https://user-images.githubusercontent.com/67292767/96462884-03fa8280-121e-11eb-824d-22b1939d3d59.jpg)
+![Risk Assessment](https://i.imgur.com/PStW4pQ.png)
 
 ### ERD
 ![ERD Diagram](https://user-images.githubusercontent.com/67292767/96587972-f3f4a880-12da-11eb-8ddd-4458962648f6.jpg)
