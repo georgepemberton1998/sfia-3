@@ -43,9 +43,6 @@ The additional features we have decided to implement as a team are as follows:
 ## Documentation
 ### Kanban board 
 
-### CI Pipeline
-![CI Pipeline](https://i.imgur.com/DWyH8aO.png)
-
 ### MoSCoW Analysis
 ![MoSCoW diagram](https://i.imgur.com/tajqyXm.png)
 
@@ -55,6 +52,9 @@ The additional features we have decided to implement as a team are as follows:
 
 ### ERD
 ![ERD Diagram](https://user-images.githubusercontent.com/67292767/96587972-f3f4a880-12da-11eb-8ddd-4458962648f6.jpg)
+
+### CI Pipeline
+![CI Pipeline](https://i.imgur.com/DWyH8aO.png)
 
 ### Wireframes
 ![View Tickets](https://i.imgur.com/1pAGrZn.png)
