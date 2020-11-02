@@ -135,9 +135,9 @@ React testing - describe
 Coverage - line method & other
 </span> 
 <br/>
-Average testing coverage:
+Average testing coverage:<br/>
 ![Average Testing coverage](https://i.imgur.com/QDs9JjF.png) <br/>
-Package testing Coverage:
+Package testing Coverage: <br/>
 ![Individual package testing](https://i.imgur.com/WUvCN4U.png)
 
 ## Licensing
