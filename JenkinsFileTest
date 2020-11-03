@@ -20,7 +20,6 @@ pipeline{
                 '''
             }
         }
-        
         stage('deploy') {
           steps{
             sh '''
@@ -29,6 +28,7 @@ pipeline{
             docker-compose up -d
             >> EOF
             '''
+            }
         }
     }
 }
