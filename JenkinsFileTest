@@ -27,5 +27,7 @@ pipeline{
             ssh ubuntu@35.242.162.192 << EOF
             cd sfia-3
             docker-compose up -d
+            >> EOF
+            '''
     }
 }
