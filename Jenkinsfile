@@ -55,7 +55,7 @@ pipeline{
                 '''
             }
         }
-        stage('Production deploy') {
+/*        stage('Production deploy') {
             steps {
               //  load "/home/jenkins/.envvars/env-vars-prod.groovy"
                 sh '''
@@ -63,6 +63,6 @@ pipeline{
                 '''
             }
 
-        }
+        }*/
     }
 }
