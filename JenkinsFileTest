@@ -8,7 +8,7 @@ pipeline{
         stage('Set up') {
             steps {
                 sh '''
-                ssh georgepemberton1998@35.242.162.192 << EOF
+                ssh georgepemberton199834.89.15.33 << EOF
                 if [ -d "sfia-3" ]
                 then
                 rm -r sfia-3 --force
@@ -23,7 +23,7 @@ pipeline{
         stage('deploy') {
           steps{
             sh '''
-            ssh georgepemberton1998@35.242.162.192 << EOF
+            ssh georgepemberton1998@34.89.15.33 << EOF
             cd sfia-3
             docker-compose up -d
             >> EOF
