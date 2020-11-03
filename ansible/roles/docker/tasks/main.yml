@@ -1,0 +1,17 @@
+  - name: 'Install docker'
+    shell:  curl https://get.docker.com | sudo bash
+  - name: 'make sure jq & curl is installed'
+    shell: sudo apt update -y && sudo apt install -y curl jq
+  - name: 'set which version to download (latest)'
+    shell: version=$(curl -s https://api.github.com/repos/docker/compose/releases/latest | jq -r '.tag_name')
+  - name: 'download to /usr/local/bin/docker-compose'
+    shell: sudo curl -L "https://github.com/docker/compose/releases/download/${version}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  - name: 'make the file executable'
+    shell: sudo chmod +x /usr/local/bin/docker-compose
+
+#  - name: 'adding existing user "jenkins" to group sudo'
+#    user:
+#      name: jenkins
+#      groups: sudo
+#      append: yes
+#    become: yes
