@@ -75,7 +75,12 @@ pipeline{
             steps {
               //  load "/home/jenkins/.envvars/env-vars-prod.groovy"
                 sh '''
-                kubectl apply -f /kubernetes
+                cd && cd sfia-3
+                cd kubernetes
+                kubectl apply -f config-map.yaml
+                kubectl apply -f backend.yaml
+                kubectl apply -f frontend.yaml
+                kubectl apply -f nginx.yaml
                 '''
             }
 
