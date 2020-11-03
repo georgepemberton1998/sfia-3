@@ -12,9 +12,9 @@ pipeline{
                 if [ -d "sfia-3" ]
                 then
                 rm -r sfia-3 --force
-                git clone https://github.com/georgepemberton1998/sfia-3.git
+                git clone 
                 else
-                git clone https://github.com/georgepemberton1998/sfia-3.git
+                git clone git@github.com:georgepemberton1998/sfia-3.gitgit@github.com:georgepemberton1998/sfia-3.git
                 fi
                 >> EOF
                 '''
