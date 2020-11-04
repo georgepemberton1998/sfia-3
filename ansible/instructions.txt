@@ -1,6 +1,7 @@
 NEW To Use:
 1. update IP address in inventory file
 2. SSH into vm (get rid of host checking error)
+(2.5). Add public key to VMs authorized_keys file
 3. export 'ip=(new vm ip)'
 4. run ansible.sh script
 5. when prompted access new VM and create '.ssh' folder along with 'authorized_keys' file containing ansible host public key
