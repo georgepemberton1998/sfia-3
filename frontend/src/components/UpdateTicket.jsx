@@ -13,7 +13,7 @@ const UpdateTicket = () => {
     let [solutionDesc, setSolutionDesc] = useState('');
     useEffect(() => {
         
-        const url = "http://localhost:8082/ticket/getTicketById/" + id;
+        const url = "/api/ticket/getTicketById/" + id;
         console.log(url);
         axios.get(url)
         .then(res => {
@@ -31,7 +31,7 @@ const UpdateTicket = () => {
 
 
     const updateTicket = () => {
-      const url = "http://localhost:8082/ticket/updateTicket/" + id;
+      const url = "/api/ticket/updateTicket/" + id;
         if(title === "" || author === "" || description === "" || topic === "" || urgency === "") {
             alert("Please complete the ticket request before submitting");
         }

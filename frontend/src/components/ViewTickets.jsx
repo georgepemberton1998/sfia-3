@@ -9,7 +9,7 @@ const ViewTickets = () => {
   
     useEffect(() => {
       axios
-        .get("http://localhost:8082/ticket/getTickets")
+        .get("/api/ticket/getTickets")
         .then((data) => data)
         .then((result) => {
 

@@ -14,7 +14,7 @@ const CreateTicket = () => {
             alert("Please complete the ticket request before submitting");
         }
         else {
-        axios.post('http://localhost:8082/ticket/createTicket/',{
+        axios.post('/api/ticket/createTicket/',{
             title: title,
             author: author,
             description: description,

@@ -6,7 +6,7 @@ const DeleteTicket = () => {
     let {id} = useParams(); //gets id passed through URL 
     useEffect(() => {
         
-        const url = "http://localhost:8082/ticket/deleteTicket/" + id;
+        const url = "/api/ticket/deleteTicket/" + id;
         console.log(url);
         axios.delete(url)
         .then(res => {
