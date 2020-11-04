@@ -8,7 +8,7 @@ pipeline{
         stage('Set up') {
             steps {
                 //this may not be required, depends if we need a test vm
-                load "/home/jenkins/.envvars/env-vars.groovy"
+ //               load "/home/jenkins/.envvars/env-vars.groovy"
                 sh '''
                 ssh $USER@$VM << EOF
                 if [ -d "sfia-3" ]
@@ -55,7 +55,7 @@ pipeline{
                 '''
             }
         }
-        stage('Production deploy') {
+/*        stage('Production deploy') {
             steps {
               //  load "/home/jenkins/.envvars/env-vars-prod.groovy"
                 sh '''
@@ -63,6 +63,6 @@ pipeline{
                 '''
             }
 
-        }
+        }*/
     }
 }

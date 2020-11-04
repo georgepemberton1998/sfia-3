@@ -21,16 +21,6 @@ This is the repo for our final project at the QA Academy
     - [CI Pipeline](#ci-pipeline)
     - [Wireframes](#wireframes)
   - [Tools used](#tools-used)
-    - [Dev-Ops](#dev-ops)
-    - [Terraform](#terraform)
-    - [Ansible](#ansible)
-    - [Jenkins](#jenkins)
-    - [Kubernetes](#kubernetes)
-    - [AWS](#aws)
-    - [Application](#application)
-    - [Frontend](#frontend)
-    - [Backend](#backend)
-      - [Testing](#testing)
   - [Licensing](#licensing)
   - [Authors/Contributors](#authorscontributors)
 
@@ -71,9 +61,9 @@ The additional features we have decided to implement as a team are as follows:
 ![CI Pipeline](https://i.imgur.com/DWyH8aO.png)
 
 ### Wireframes
-![View Tickets](https://i.imgur.com/1pAGrZn.png)
+![View Tickets](https://i.imgur.com/8gGSsZB.png)
 ![Create Ticket](https://i.imgur.com/CgZDYwQ.png)
-![Update Ticket](https://i.imgur.com/K7poGRQ.png)
+![Update Ticket](https://i.imgur.com/vEpOU2g.png)
 
 ## Tools used
 * [Dev-Ops](#dev-ops)
