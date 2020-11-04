@@ -7,8 +7,6 @@ pipeline{
     stages {
         stage('Set up') {
             steps {
-                //this may not be required, depends if we need a test vm
- //               load "/home/jenkins/.envvars/env-vars.groovy"
                 sh '''
                 ssh $USER@$VM << EOF
                 if [ -d "sfia-3" ]
@@ -18,6 +16,7 @@ pipeline{
                 else
                 git clone https://github.com/georgepemberton1998/sfia-3.git
                 fi
+                git checkout development
                 >> EOF
                 '''
             }
@@ -48,21 +47,29 @@ pipeline{
             steps { 
                 sh '''
                 ssh $USER@$VM << EOF
+                
+                curl https://get.docker.com | sudo bash
+                sudo apt update -y && sudo apt install -y curl jq
+                sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+                sudo chmod +x /usr/local/bin/docker-compose
+                sudo usermod -aG docker ubuntu
+                
+                pwd            
                 cd sfia-3
-                export app_version = $app_version
+                git checkout development
+                
                 docker-compose up -d --build 
                 >> EOF
                 '''
             }
         }
-/*        stage('Production deploy') {
+        stage('Production deploy') {
             steps {
-              //  load "/home/jenkins/.envvars/env-vars-prod.groovy"
                 sh '''
                 kubectl apply -f /kubernetes
                 '''
             }
 
-        }*/
+        }
     }
 }
