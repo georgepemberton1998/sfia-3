@@ -16,6 +16,7 @@ resource "aws_subnet" "publicA" {
   map_public_ip_on_launch = true
   availability_zone       = data.aws_availability_zones.available.names[0]
   vpc_id                  = aws_vpc.project-vpc.id
+  tags                    = { KubernetesCluster = "project-cluster" }
 }
 
 resource "aws_subnet" "publicB" {
