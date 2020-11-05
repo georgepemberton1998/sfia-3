@@ -84,9 +84,7 @@ The additional features we have decided to implement as a team are as follows:
 </p>
 
 ### Terraform
-<span style="color:red">What does terraform set up?  
-what configuration does it do?  
-Anything else</span> 
+Terraform is an Infrastructure as Code Tool that was used in this project to set up the infrastructure needed for the project to work. This included creating the EKS cluster, EC2 instances for Jenkins and the Test VM. Additionally it sets up the security groups needed for these with the appropriate ports open. A VPC (Virtual Private Cloud) was also created using terraform. 
 
 ### Ansible
 Ansibles key role is to increase the automation of the deployment of this application. We have used it to install and configure several dependencies which would otherwise have to be done manually. The installs take place on the instances created using terraform. Currently, there are 3 installs we have automated this way;  
@@ -106,10 +104,7 @@ Anything else</span>
 
 
 ### Kubernetes
-<span style="color:red">What does it do? (deploy the app)  
-How does it work?  
-What does the environment look like?  
-Anything else</span>
+The application has been deployed into an AWS EKS Kubernetes Cluster.
 
 ### AWS
 <span style="color:red">Networking  
@@ -123,23 +118,13 @@ Anything else</span>
 
 
 ### Frontend
-
-<span style="color:red">What we did to hit the MVP  
-What we did to surpass the MVP   
-CSS, react</span>
+The frontend was built using React. The application was broken down into components, there was a Ticket component that was used to help display each ticket that is added by the user. Full working CRUD functionality is available for use on the frontend including three additional features - Urgency, Topics and Solutions. The application was styled using some basic CSS, we didn't use Bootstrap as we wanted to keep things simple and easy to maintain. 
 
 ### Backend
-<span style="color:red">What we did to hit the MVP   
-What we did to surpass the MVP  
-Springboot</span>
+The backend was created using Springboot, it has full CRUD functionality so we can create, read, update and delete tickets. We also had a separate table for Solutions to store solutions associated with a ticket. 
 
 #### Testing
-<span style="color:red">Spring testing - describe  
-Coverage - line method & other  
-React testing - describe  
-Coverage - line method & other
-</span>
-<br/>
+The backend of the application was tested thoroughly. This included Unit Testing using Mockito which allowed us to check that each CRUD method worked, we did have a couple of problems with some of the tests which prevented them being successful due to syntax issues although the majority of the methods were tested properly. We also did Integration testing making use of a pre-populated SQL Schema to allow us to check that the functionality works on the user side making use of the Controller URI's to test that we could make POST, PUT, GET and DELETE requests. 
 <br/>
 Average testing coverage:<br/>
 ![Average Testing coverage](https://i.imgur.com/QDs9JjF.png) <br/>
