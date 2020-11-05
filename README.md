@@ -67,6 +67,7 @@ The additional features we have decided to implement as a team are as follows:
 
 ## Tools used
 * [Dev-Ops](#dev-ops)
+   + [Docker](#docker)
    + [Terraform](#terraform)
    + [Ansible](#ansible)
    + [Jenkins](#jenkins)
@@ -82,6 +83,8 @@ The additional features we have decided to implement as a team are as follows:
 <p>
   <img width="150" height="200" src="https://i.imgur.com/pydg9bI.jpg">
 </p>
+### Docker
+Docker is a containerisation tool that was used in this project to put all the required dependencies in the frontend and the backend into separate containers so that the application can be easily ran from anywhere by downloading the appropriate Docker images from DockerHub (Frontend: maccpr7/frontend-react:latest) (Backend: maccpr7/backend-java:latest). Docker Compose was also used to allow running of the frontend and backend as services on a Docker Network with NGINX running to allow the requests to the backend to be proxy passed to the API (Gateway Service) 
 
 ### Terraform
 Terraform is an Infrastructure as Code Tool that was used in this project to set up the infrastructure needed for the project to work. This included creating the EKS cluster, EC2 instances for Jenkins and the Test VM. Additionally it sets up the security groups needed for these with the appropriate ports open. A VPC (Virtual Private Cloud) was also created using terraform. 
