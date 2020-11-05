@@ -98,20 +98,16 @@ On the test EC2, which is used to pull and test the most recent images from dock
 
 
 ### Jenkins
-<span style="color:red">What does the job do?  
-What did we do with the UI?  
-Anything else</span>
+Jenkins is a CI automation server that was used in this project by making use of a Jenkins Pipeline to allow automated deployment of the application. 
 
 
 ### Kubernetes
-The application has been deployed into an AWS EKS Kubernetes Cluster.
+Kubernetes is a Container Orchestration tool that allows deploying containers into the cloud using the Kubernetes API. The application has been deployed into an AWS EKS Kubernetes Cluster for this project.
 
 ### AWS
-<span style="color:red">Networking  
-Anything else</span>
+AWS is the cloud provider that was used for this project, all infrastructure used was created using Terraform with no extra configuration needed. 
 
 ### Application
-<span style="color:red">image of frontend</span> 
 <p>
   <img width="150" height="200" src="https://i.imgur.com/pydg9bI.jpg">
 </p>
