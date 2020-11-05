@@ -75,9 +75,12 @@ pipeline{
                 
                 kubectl apply -f /kubernetes
                 
-                sleep 60
-                kubectl get pods
-                kubectl get services
+                sleep 30
+                kubectl get pods 
+                kubectl get services 
+                sleep 30
+                kubectl get pods 
+                kubectl get services 
                 sleep 30
                 kubectl get pods 
                 kubectl get services 
