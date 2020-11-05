@@ -65,12 +65,22 @@ pipeline{
         stage('Production deploy') {
             steps {
                 sh '''
+                aws configure set aws_access_key_id $access_key
+                aws configure set aws_secret_access_key $secret_key
+                aws configure set default.region eu-west-2
+                
                 sudo snap install kubectl --classic 
+                
                 aws eks --region eu-west-2 update-kubeconfig --name project-cluster
+                
                 kubectl apply -f /kubernetes
+                
                 sleep 60
                 kubectl get pods
                 kubectl get services
+                sleep 30
+                kubectl get pods 
+                kubectl get services 
                 '''
             }
 
