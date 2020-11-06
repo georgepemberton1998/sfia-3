@@ -1,5 +1,5 @@
 #!/bin/bash
-scp -r Install.sh qa@${ip}:
+scp -r Install.sh ubuntu@${ip}:
 
 ansible-playbook -i inventory.cfg playbook.yaml
 
@@ -7,6 +7,6 @@ scp -r ~/.jenkins jenkins@${ip}:
 
 echo "echo 'jenkins ALL=(ALL:ALL) NOPASSWD: ALL' | sudo EDITOR='tee -a' visudo"
 
-ssh qa@${ip}
+ssh ubuntu@${ip}
 
 EOF
