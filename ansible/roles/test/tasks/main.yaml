@@ -1,4 +1,5 @@
-- hosts: test
-  tasks:
-  - name: "Ping"
-    ping:
+- name: install the latest version of Apache Maven
+  apt:
+    name: maven
+    state: latest
+    become: true
