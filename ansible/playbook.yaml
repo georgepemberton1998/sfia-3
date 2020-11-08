@@ -4,3 +4,7 @@
   - jenkins
   - docker
 
+- hosts: test
+  become: yes
+  roles:
+  - test
