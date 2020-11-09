@@ -54,7 +54,13 @@ pipeline{
              
                 cd sfia-3
                 git checkout development
-                
+
+                cd backend
+                nvm test >> test.txt
+                cat test.txt
+
+                cd ..
+
                 docker-compose up -d --build 
                 >> EOF
                 '''
