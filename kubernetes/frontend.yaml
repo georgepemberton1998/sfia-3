@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: maccpr7/frontend-react:latest
+        image: maccpr7/frontend-react:$app_version
         ports:
         - containerPort: 3000   
         stdin: true
