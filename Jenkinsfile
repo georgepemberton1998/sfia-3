@@ -56,8 +56,7 @@ pipeline{
                 git checkout development
 
                 cd backend
-                mvn test >> test.txt
-                cat test.txt
+                mvn test
 
                 cd ..
 
