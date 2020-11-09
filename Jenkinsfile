@@ -6,7 +6,7 @@ pipeline{
         // hello
     }
     stages {
-        stage('Set up') {
+        stage('Set up TestVM') {
             steps {
                 sh '''
                 ssh $USER@$VM << EOF
@@ -42,7 +42,7 @@ pipeline{
                 }
             }
         }
-        stage('Deploy app') {
+        stage('Test App') {
             steps { 
                 sh '''
                 ssh $USER@$VM << EOF
