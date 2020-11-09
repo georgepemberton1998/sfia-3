@@ -1,3 +1,11 @@
+- name: Install OpenJDK Java
+  become: yes
+  apt:
+    name: openjdk-8-jdk
+    state: present
+  with_items:
+    openjdk-8-jdk
+
 - name: install the latest version of Apache Maven
   apt:
     name: maven
