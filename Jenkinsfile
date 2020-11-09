@@ -58,9 +58,6 @@ pipeline{
                 cd backend
                 mvn test
 
-                cd ..
-
-                docker-compose up -d --build 
                 >> EOF
                 '''
             }
