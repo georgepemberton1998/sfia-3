@@ -91,14 +91,13 @@ Docker is a containerisation tool that was used in this project to put all the r
 Terraform is an Infrastructure as Code Tool that was used in this project to set up the infrastructure needed for the project to work. This included creating the EKS cluster, EC2 instances for Jenkins and the Test VM. Additionally it sets up the security groups needed for these with the appropriate ports open. A VPC (Virtual Private Cloud) was also created using terraform. 
 
 ### Ansible
-Ansibles key role is to increase the automation of the deployment of this application. We have used it to install and configure several dependencies which would otherwise have to be done manually. The installs take place on the instances created using Terraform. Currently, there are 4 installs we have automated this way;  
+Ansibles key role is to increase the automation of the deployment of this application. We have used it to install and configure several dependencies which would otherwise have to be done manually. The installs take place on the instances created using Terraform. Currently, there are 3/4 installs we have automated this way;  
 **1. Jenkins**,  
 On the Jenkins Host, following an SCP of a script to create a Jenkins user and install it. After this, another SCP takes place which holds the desired Jenkins configuration (Users, Plugins, Jobs & UI)  
 **2. AWS CLI & Kubectl**,   
 On the Jenkins host, which is used to deploy the application on the Kuberenetes cluster  
-**3. Docker & Docker-Compose**,  
+**3. Docker & Docker-Compose & TESTVM**,  
 On the Jenkins host, which is used to push the most recent images to DockerHub
-**4. TestVM**, <br>
 On the TestVM, Ansible is used to configure the TestVM with Java and Maven which will be needed by the Jenkins Pipeline later on to run tests of the backend.
 
 
