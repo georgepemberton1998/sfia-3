@@ -1,3 +1,7 @@
+- name: 'Update APT package manager'
+  apt:
+    update_cache: yes
+
 - name: Install OpenJDK Java
   become: yes
   apt:
