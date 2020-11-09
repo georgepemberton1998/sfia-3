@@ -5,7 +5,7 @@ variable "ami" {
 
 variable "instance_type" {
   description = "Type of instance to be started up"
-  default     = "t2.micro"
+  default     = "t2.small"
 }
 
 variable "key_name" {
