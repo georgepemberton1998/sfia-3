@@ -56,7 +56,7 @@ pipeline{
                 git checkout development
 
                 cd backend
-                nvm test >> test.txt
+                mvn test >> test.txt
                 cat test.txt
 
                 cd ..
