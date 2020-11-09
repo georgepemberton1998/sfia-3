@@ -97,7 +97,7 @@ On the Jenkins Host, following an SCP of a script to create a Jenkins user and i
 **2. AWS CLI & Kubectl**,   
 On the Jenkins host, which is used to deploy the application on the Kuberenetes cluster  
 **3. Docker & Docker-Compose & TESTVM**,  
-On the Jenkins host, which is used to push the most recent images to DockerHub
+On the Jenkins host, which is used to push the most recent images to DockerHub.
 On the TestVM, Ansible is used to configure the TestVM with Java and Maven which will be needed by the Jenkins Pipeline later on to run tests of the backend.
 
 
