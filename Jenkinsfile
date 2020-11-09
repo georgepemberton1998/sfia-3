@@ -63,6 +63,9 @@ pipeline{
         stage('Production deploy') {
             steps {
                 sh '''
+
+                export app_version=$app_version
+
                 aws configure set aws_access_key_id $access_key
                 aws configure set aws_secret_access_key $secret_key
                 aws configure set default.region eu-west-2
