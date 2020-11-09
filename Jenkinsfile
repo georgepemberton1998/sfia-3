@@ -78,10 +78,10 @@ pipeline{
 
                 aws eks --region eu-west-2 update-kubeconfig --name project-cluster
                 
-                kubectl apply -f /kubernetes/backend.yaml
-                kubectl apply -f /kubernetes/config-map.yaml
-                kubectl apply -f /kubernetes/nginx.yaml
-                envsubst < /kubernetes/frontend.yaml | kubectl apply -f -
+                kubectl apply -f ./kubernetes/backend.yaml
+                kubectl apply -f ./kubernetes/config-map.yaml
+                kubectl apply -f ./kubernetes/nginx.yaml
+                envsubst < ./kubernetes/frontend.yaml | kubectl apply -f -
 
                 sleep 30
                 kubectl get pods 
