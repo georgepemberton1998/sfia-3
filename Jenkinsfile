@@ -3,6 +3,7 @@ pipeline{
     environment {
         app_version = 'latest'
         rollback = 'true'
+        // hello
     }
     stages {
         stage('Set up') {
