@@ -26,7 +26,6 @@ pipeline{
                 script {
                     if (env.rollback == 'false') {
                         image = docker.build("maccpr7/frontend-react", "./frontend")
-                        image1 = docker.build("maccpr7/backend-java", "./backend")
                     }
                 }
             }
@@ -37,7 +36,6 @@ pipeline{
                     if (env.rollback == 'false'){
                         docker.withRegistry('https://registry.hub.docker.com', 'docker-hub-credentials'){ //need to set up a dockerhub credentials on jenkins
                             image.push("${env.app_version}")
-                            image1.push("${env.app_version}")
                         }
                     }                 
                 }
