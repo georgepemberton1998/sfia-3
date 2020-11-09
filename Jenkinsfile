@@ -55,33 +55,35 @@ pipeline{
         }
         stage('Production deploy') {
             steps {
-                sh '''
+                withCredentials([string(credentialsId: 'access_key', variable: 'access_key'),
+                                 string(credentialsId: 'secret_key', variable: 'secret_key')]) {
+                    sh '''
 
-                export app_version=$app_version
+                    export app_version=$app_version
 
-                aws configure set aws_access_key_id $access_key
-                aws configure set aws_secret_access_key $secret_key
-                aws configure set default.region eu-west-2
+                    aws configure set aws_access_key_id $access_key
+                    aws configure set aws_secret_access_key $secret_key
+                    aws configure set default.region eu-west-2
 
-                aws eks --region eu-west-2 update-kubeconfig --name project-cluster
-                
-                kubectl apply -f ./kubernetes/backend.yaml
-                kubectl apply -f ./kubernetes/config-map.yaml
-                kubectl apply -f ./kubernetes/nginx.yaml
-                envsubst < ./kubernetes/frontend.yaml | kubectl apply -f -
+                    aws eks --region eu-west-2 update-kubeconfig --name project-cluster
 
-                sleep 30
-                kubectl get pods 
-                kubectl get services 
-                sleep 30
-                kubectl get pods 
-                kubectl get services 
-                sleep 30
-                kubectl get pods 
-                kubectl get services 
-                '''
+                    kubectl apply -f ./kubernetes/backend.yaml
+                    kubectl apply -f ./kubernetes/config-map.yaml
+                    kubectl apply -f ./kubernetes/nginx.yaml
+                    envsubst < ./kubernetes/frontend.yaml | kubectl apply -f -
+
+                    sleep 30
+                    kubectl get pods
+                    kubectl get services
+                    sleep 30
+                    kubectl get pods
+                    kubectl get services
+                    sleep 30
+                    kubectl get pods
+                    kubectl get services
+                    '''
+                }
             }
-
         }
     }
 }
