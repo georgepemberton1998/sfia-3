@@ -1,9 +1,8 @@
 pipeline{
     agent any
     environment {
-        app_version = 'v1.1'
-        rollback = 'false'
-        // hello
+        app_version = 'latest'
+        rollback = 'true'
     }
     stages {
         stage('Set up TestVM') {
@@ -17,7 +16,6 @@ pipeline{
                 else
                 git clone https://github.com/georgepemberton1998/sfia-3.git
                 fi
-                git checkout development
                 >> EOF
                 '''
             }
@@ -48,8 +46,6 @@ pipeline{
                 ssh $USER@$VM << EOF
              
                 cd sfia-3
-                git checkout development
-
                 cd backend
                 mvn test
 
