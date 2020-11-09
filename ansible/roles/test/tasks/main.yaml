@@ -7,7 +7,8 @@
     openjdk-8-jdk
 
 - name: install the latest version of Apache Maven
+  become: yes
   apt:
     name: maven
     state: latest
-    become: true
+
