@@ -3,7 +3,7 @@ pipeline{
     environment {
         app_version = 'v1.1'
         rollback = 'true'
-    }
+    } //fhfrihgfihrb
     stages {
         stage('Set up TestVM') {
             steps {
