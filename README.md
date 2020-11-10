@@ -79,7 +79,7 @@ The additional features we have decided to implement as a team are as follows:
    + [Testing](#testing)
 
 ### Dev-Ops
-<span style="color:red">image of pipeline</span> 
+<span style="color:red"></span> 
 <p>
   <img width="150" height="200" src="https://i.imgur.com/pydg9bI.jpg">
 </p>
@@ -91,18 +91,18 @@ Docker is a containerisation tool that was used in this project to put all the r
 Terraform is an Infrastructure as Code Tool that was used in this project to set up the infrastructure needed for the project to work. This included creating the EKS cluster, EC2 instances for Jenkins and the Test VM. Additionally it sets up the security groups needed for these with the appropriate ports open. A VPC (Virtual Private Cloud) was also created using terraform. 
 
 ### Ansible
-Ansibles key role is to increase the automation of the deployment of this application. We have used it to install and configure several dependencies which would otherwise have to be done manually. The installs take place on the instances created using terraform. Currently, there are 3 installs we have automated this way;  
+Ansibles key role is to increase the automation of the deployment of this application. We have used it to install and configure several dependencies which would otherwise have to be done manually. The installs take place on the instances created using Terraform. Currently, there are 3/4 installs we have automated this way;  
 **1. Jenkins**,  
-On the Jenkins Host, following an SCP of a script to create a jenkins user and install it. After this, another SCP takes place which holds the desired jenkins configuration (Users, Plugins, Jobs & UI)  
-**2. AWS CLI**,   
-On the jenkins host, which is used to deploy the application on the Kuberenetes cluster  
-**3. Docker & Docker-Compose**,  
-On the Jenkins host, which is used to push the most recent images to dockerhub
-On the test EC2, which is used to pull and test the most recent images from dockerhub  
+On the Jenkins Host, following an SCP of a script to create a Jenkins user and install it. After this, another SCP takes place which holds the desired Jenkins configuration (Users, Plugins, Jobs & UI)  
+**2. AWS CLI & Kubectl**,   
+On the Jenkins host, which is used to deploy the application on the Kuberenetes cluster  
+**3. Docker & Docker-Compose & TESTVM**,  
+On the Jenkins host, which is used to push the most recent images to DockerHub.
+On the TestVM, Ansible is used to configure the TestVM with Java and Maven which will be needed by the Jenkins Pipeline later on to run tests of the backend.
 
 
 ### Jenkins
-Jenkins is a CI automation server that was used in this project by making use of a Jenkins Pipeline to allow automated deployment of the application. 
+Jenkins is a CI automation server that was used in this project by making use of a Jenkins Pipeline to allow automated deployment of the application. Firstly, it clones the GitHub Repository on the TestVM using SSH, then it will build the updated images and push them to DockerHub, then it will run tests of the backend on the TestVM before it finally deploys the application onto the AWS EKS Cluster. 
 
 
 ### Kubernetes
