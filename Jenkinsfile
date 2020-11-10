@@ -1,9 +1,9 @@
 pipeline{
     agent any
     environment {
-        app_version = 'v1.1'
+        app_version = 'latest'
         rollback = 'true'
-    } //fhfrihgfihrb
+    }
     stages {
         stage('Set up TestVM') {
             steps {
